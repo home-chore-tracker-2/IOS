@@ -63,9 +63,12 @@
                                     <constraint firstAttribute="height" constant="40" id="k0O-YV-P8X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Add Family Member">
+                                <state key="normal" title="Add Child">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oMm-fp-5k4" kind="presentation" id="eir-PE-YgD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-Ne-iVF">
                                 <rect key="frame" x="35" y="512" width="344" height="40"/>
@@ -98,6 +101,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--AddFamilyMember-->
+        <scene sceneID="Wf5-1d-wrV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddFamilyMember" id="oMm-fp-5k4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZh-cf-8xg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757" y="138"/>
         </scene>
         <!--Home-->
         <scene sceneID="z5n-MX-OoG">
