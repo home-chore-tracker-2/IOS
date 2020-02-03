@@ -16,6 +16,7 @@
 		A2002F9423E7E7600066B3BB /* SignUp:LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */; };
 		A2002F9623E7E8AE0066B3BB /* AddFamilyMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */; };
 		A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */; };
+		A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "SignUp:LogIn.storyboard"; sourceTree = "<group>"; };
 		A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddFamilyMember.storyboard; sourceTree = "<group>"; };
 		A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildDetail.storyboard; sourceTree = "<group>"; };
+		A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignChore.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				A2002F8323E780A00066B3BB /* ViewController.swift */,
 				A2002F8523E780A00066B3BB /* Main.storyboard */,
 				A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */,
+				A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */,
 				A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */,
 				A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */,
 				A2002F8823E780A10066B3BB /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			files = (
 				A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
+				A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */,
 				A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */,
 				A2002F9623E7E8AE0066B3BB /* AddFamilyMember.storyboard in Resources */,
 				A2002F8723E780A00066B3BB /* Main.storyboard in Resources */,
