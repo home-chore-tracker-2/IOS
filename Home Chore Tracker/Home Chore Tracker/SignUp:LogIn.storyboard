@@ -24,8 +24,9 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bjV-SP-0iA">
                                 <rect key="frame" x="35" y="120" width="344" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Sign Up"/>
+                                    <segment title="Log in"/>
+                                    <segment title="Child log in"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-Sx-cK4">
@@ -34,12 +35,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsz-1w-AhC">
-                                <rect key="frame" x="20" y="245" width="374" height="34"/>
+                                <rect key="frame" x="20" y="289" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKQ-Do-qOb">
-                                <rect key="frame" x="35" y="319" width="344" height="40"/>
+                                <rect key="frame" x="35" y="363" width="344" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jsO-xg-PIt"/>
@@ -49,6 +50,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-nO-uC3">
+                                <rect key="frame" x="20" y="235" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -59,13 +65,16 @@
                             <constraint firstItem="FKQ-Do-qOb" firstAttribute="top" secondItem="Fsz-1w-AhC" secondAttribute="bottom" constant="40" id="Ion-Rl-cE7"/>
                             <constraint firstItem="FKQ-Do-qOb" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="35" id="OlM-qf-f4i"/>
                             <constraint firstItem="dOf-fH-e7M" firstAttribute="centerX" secondItem="iMw-Ny-1Y6" secondAttribute="centerX" id="Pw4-Yw-gaX"/>
+                            <constraint firstItem="gF1-nO-uC3" firstAttribute="top" secondItem="IGO-Sx-cK4" secondAttribute="bottom" constant="20" id="U4B-UL-8YK"/>
                             <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="Fsz-1w-AhC" secondAttribute="trailing" constant="20" id="UaH-0J-uSu"/>
+                            <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="gF1-nO-uC3" secondAttribute="trailing" constant="20" id="VlE-6B-vnP"/>
                             <constraint firstItem="IGO-Sx-cK4" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="evc-Xb-s4k"/>
                             <constraint firstItem="bjV-SP-0iA" firstAttribute="top" secondItem="dOf-fH-e7M" secondAttribute="bottom" constant="36" id="mGB-jZ-XuH"/>
                             <constraint firstItem="Fsz-1w-AhC" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="mPV-T2-PBY"/>
+                            <constraint firstItem="gF1-nO-uC3" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="nO3-uw-ds5"/>
                             <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="bjV-SP-0iA" secondAttribute="trailing" constant="35" id="oHm-Mn-CbB"/>
-                            <constraint firstItem="Fsz-1w-AhC" firstAttribute="top" secondItem="IGO-Sx-cK4" secondAttribute="bottom" constant="30" id="qrH-vX-Qhv"/>
                             <constraint firstItem="bjV-SP-0iA" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="35" id="sCj-Us-pNU"/>
+                            <constraint firstItem="Fsz-1w-AhC" firstAttribute="top" secondItem="gF1-nO-uC3" secondAttribute="bottom" constant="20" id="tlh-WU-fMs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pc2-hB-mfh"/>
                     </view>
