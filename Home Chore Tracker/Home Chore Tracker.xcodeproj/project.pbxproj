@@ -104,9 +104,7 @@
 				A2002F8823E780A10066B3BB /* Assets.xcassets */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
 				A2002F8D23E780A10066B3BB /* Info.plist */,
-				A2E8E8BE23E8C5730095A345 /* ParentRepresentation.swift */,
-				A2E8E8C023E8C5BE0095A345 /* ChildRepresentation.swift */,
-				A2E8E8C223E8C66D0095A345 /* ChoreRepresentation.swift */,
+				A2E8E8C423E8CA330095A345 /* Models */,
 			);
 			path = "Home Chore Tracker";
 			sourceTree = "<group>";
@@ -118,6 +116,16 @@
 				A2E8E8B823E8A5240095A345 /* Info.plist */,
 			);
 			path = "Home Chore TrackerTests";
+			sourceTree = "<group>";
+		};
+		A2E8E8C423E8CA330095A345 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2E8E8BE23E8C5730095A345 /* ParentRepresentation.swift */,
+				A2E8E8C023E8C5BE0095A345 /* ChildRepresentation.swift */,
+				A2E8E8C223E8C66D0095A345 /* ChoreRepresentation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
