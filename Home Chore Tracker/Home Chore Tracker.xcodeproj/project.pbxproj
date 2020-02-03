@@ -13,6 +13,7 @@
 		A2002F8723E780A00066B3BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8523E780A00066B3BB /* Main.storyboard */; };
 		A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8823E780A10066B3BB /* Assets.xcassets */; };
 		A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */; };
+		A2002F9423E7E7600066B3BB /* SignUp:LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2002F8823E780A10066B3BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2002F8B23E780A10066B3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2002F8D23E780A10066B3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "SignUp:LogIn.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				A2002F8123E780A00066B3BB /* SceneDelegate.swift */,
 				A2002F8323E780A00066B3BB /* ViewController.swift */,
 				A2002F8523E780A00066B3BB /* Main.storyboard */,
+				A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */,
 				A2002F8823E780A10066B3BB /* Assets.xcassets */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
 				A2002F8D23E780A10066B3BB /* Info.plist */,
@@ -128,6 +131,7 @@
 				A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
 				A2002F8723E780A00066B3BB /* Main.storyboard in Resources */,
+				A2002F9423E7E7600066B3BB /* SignUp:LogIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
