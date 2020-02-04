@@ -18,13 +18,13 @@ extension Parent {
             let children = children
             else { return nil }
         var childrenArray = [ChildRepresentation]()
+        
         for child in children {
-            if let child = child as? Child {
-                childrenArray.append(ChildRepresentation(id: child.id, points: <#T##Int#>, cleanStreak: <#T##Int#>, username: <#T##String#>, password: <#T##String#>, chores: <#T##[ChoreRepresentation]#>))
+            if let child = child as? Child, let childRep = child.childRepresentation {
+                childrenArray.append(childRep)
             }
         }
-        
-        return ParentRepresentation(id: Int(id), username: username, password: password, email: email, children: children)
+        return ParentRepresentation(id: Int(id), username: username, password: password, email: email, children: childrenArray)
     }
 }
-    
+
