@@ -34,7 +34,7 @@ class ChoreTrackerController {
         }
     }
     
-    func signUp(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
+    func register(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
         
         let signUpURL = baseURL.appendingPathComponent("auth/register")
         
@@ -52,7 +52,8 @@ class ChoreTrackerController {
         }
         
         URLSession.shared.dataTask(with: request) { _, response, error in
-            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+            if let response = response as? HTTPURLResponse, response.statusCode != 201 {
+                NSLog("HTTP URL register response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -64,7 +65,7 @@ class ChoreTrackerController {
         }.resume()
     }
     
-    func signIn(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
+    func login(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
         let loginURL = baseURL.appendingPathComponent("auth/login")
         
         var request = URLRequest(url: loginURL)
@@ -82,6 +83,7 @@ class ChoreTrackerController {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("HTTP URL Login Response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
