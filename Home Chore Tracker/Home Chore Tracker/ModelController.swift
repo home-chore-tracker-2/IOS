@@ -18,7 +18,7 @@ enum HTTPMethod: String {
 
 class ChoreTrackerController {
     
-    private let signUpURL = URL(string: "https://chore-tracker-build.herokuapp.com/api/auth/register")!
+    private let baseURL = URL(string: "https://chore-tracker-build.herokuapp.com/api/")!
     
     private var bearer: Bearer?
     
@@ -35,8 +35,12 @@ class ChoreTrackerController {
     }
     
     func signUp(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
+        
+        let signUpURL = baseURL.appendingPathComponent("auth/register")
+        
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
             let jsonUserData = try encoder.encode(parent)
@@ -61,10 +65,11 @@ class ChoreTrackerController {
     }
     
     func signIn(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
-        let loginURL = URL(string: "https://chore-tracker-build.herokuapp.com/api/auth/login")!
+        let loginURL = baseURL.appendingPathComponent("auth/login")
         
         var request = URLRequest(url: loginURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
             let jsonUserData = try encoder.encode(parent)
