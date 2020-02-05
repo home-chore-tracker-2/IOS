@@ -16,6 +16,15 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
+enum NetworkError: Error {
+    case noAuth
+    case badAuth
+    case otherError
+    case badData
+    case noDecode
+    case noEncode
+}
+
 class ChoreTrackerController {
     
     private let baseURL = URL(string: "https://chore-tracker-build.herokuapp.com/api/")!
@@ -34,7 +43,7 @@ class ChoreTrackerController {
         }
     }
     
-    func register(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
+    func parentRegister(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
         
         let signUpURL = baseURL.appendingPathComponent("auth/register")
         
@@ -53,7 +62,7 @@ class ChoreTrackerController {
         
         URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 201 {
-                NSLog("HTTP URL register response: \(response)")
+                NSLog("HTTP URL parent register response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -65,7 +74,7 @@ class ChoreTrackerController {
         }.resume()
     }
     
-    func login(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
+    func parentLogin(with parent: ParentRepresentation, completion: @escaping (Error?) -> Void) {
         let loginURL = baseURL.appendingPathComponent("auth/login")
         
         var request = URLRequest(url: loginURL)
@@ -83,7 +92,79 @@ class ChoreTrackerController {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                NSLog("HTTP URL Login Response: \(response)")
+                NSLog("HTTP URL parent login response: \(response)")
+                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                return
+            }
+            if let error = error {
+                completion(error)
+                return
+            }
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            do {
+                self.bearer = try self.decoder.decode(Bearer.self, from: data)
+            } catch {
+                NSLog("Error decoding bearer object: \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+        }.resume()
+    }
+    
+    func childRegister(with child: ChildRepresentation, completion: @escaping (Error?) -> Void) {
+        
+        let signUpURL = baseURL.appendingPathComponent("auth/register/child")
+        
+        var request = URLRequest(url: signUpURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonUserData = try encoder.encode(child)
+            request.httpBody = jsonUserData
+        } catch {
+            NSLog("Error encoding child object: \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            if let response = response as? HTTPURLResponse, response.statusCode != 201 {
+                NSLog("HTTP URL child register response: \(response)")
+                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                return
+            }
+            if let error = error {
+                completion(error)
+                return
+            }
+            completion(nil)
+        }.resume()
+    }
+    
+    func childLogin(with child: ChildRepresentation, completion: @escaping (Error?) -> Void) {
+        let loginURL = baseURL.appendingPathComponent("auth/login/child")
+        
+        var request = URLRequest(url: loginURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonUserData = try encoder.encode(child)
+            request.httpBody = jsonUserData
+        } catch {
+            NSLog("Error encoding child object: \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("HTTP URL parent login response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
