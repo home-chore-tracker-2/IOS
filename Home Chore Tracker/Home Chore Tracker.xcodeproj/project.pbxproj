@@ -14,6 +14,7 @@
 		4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630BE23E9F07B00F33242 /* Bearer.swift */; };
 		4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C123EA08F300F33242 /* Child+Convenience.swift */; };
 		4C2630C423EA0A9E00F33242 /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */; };
+		4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */; };
 		4CFCDE7223EA7ADA006222B8 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */; };
 		A2002F8023E780A00066B3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F7F23E780A00066B3BB /* AppDelegate.swift */; };
 		A2002F8223E780A00066B3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F8123E780A00066B3BB /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		4C2630BE23E9F07B00F33242 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		4C2630C123EA08F300F33242 /* Child+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+Convenience.swift"; sourceTree = "<group>"; };
 		4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
+		4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberViewController.swift; sourceTree = "<group>"; };
 		4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
 		A2002F7C23E780A00066B3BB /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2002F7F23E780A00066B3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */,
+				4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */,
 				4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */,
 				A2002F8423E780A00066B3BB /* ViewController.swift in Sources */,
+				4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */,
 				A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */,
 				4C0E5A5523E91FB80068C2A1 /* Parent+Convenience.swift in Sources */,
 				4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */,

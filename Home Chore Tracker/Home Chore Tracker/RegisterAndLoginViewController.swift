@@ -53,13 +53,21 @@ class RegisterAndLoginViewController: UIViewController {
         guard let choreTrackerController = choreTrackerController else { return }
         if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty,
             let email = emailTextField.text, !email.isEmpty {
-            let parent = ParentRepresentation(id: nil, username: username, password: password, email: email, children: [])
+            let parent = ParentRepresentation(username: username, password: password, email: email)
             
             if loginType == .register {
                 choreTrackerController.parentRegister(with: parent) { error in
                     if let error = error {
-                        print("Error occured during sign up: \(error)")
+                        NSLog("Error occured during sign up: \(error)")
                     } else {
+                        DispatchQueue.global().async {
+                            do {
+                                try CoreDataStack.shared.save()
+                            } catch {
+                                
+                            }
+                            
+                        }
                         DispatchQueue.main.async {
                             let alertController = UIAlertController(title: "Sign Up Successful!", message: "Please log in...", preferredStyle: .alert)
                             let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -76,7 +84,7 @@ class RegisterAndLoginViewController: UIViewController {
             } else if loginType == .parentLogin {
                 choreTrackerController.parentLogin(with: parent) { error in
                     if let error = error {
-                        print("Error occured during sign in: \(error).")
+                        NSLog("Error occured during sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
                             self.dismiss(animated: true, completion: nil)

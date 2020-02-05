@@ -11,5 +11,5 @@ import Foundation
 struct ParentRepresentation: Codable {
     var id: Int?
     var username, password, email: String
-    var children: [ChildRepresentation]
+    var children: [ChildRepresentation] = []
 }
