@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct ChildRepresentation {
-    var id, points, cleanStreak: Int
+struct ChildRepresentation: Codable {
+    var id: Int
+    var points: Int = 0
+    var cleanStreak: Bool = false
     var username, password: String
-    var chores: [ChoreRepresentation]
+    var chores: [ChoreRepresentation] = []
 }

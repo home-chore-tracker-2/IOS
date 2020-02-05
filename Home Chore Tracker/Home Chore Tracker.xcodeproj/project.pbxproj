@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E5A3623E912BF0068C2A1 /* CoreDataStack.swift */; };
+		4C0E5A3A23E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E5A3823E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld */; };
+		4C0E5A5523E91FB80068C2A1 /* Parent+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */; };
+		4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630BC23E9E58900F33242 /* ModelController.swift */; };
+		4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630BE23E9F07B00F33242 /* Bearer.swift */; };
+		4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C123EA08F300F33242 /* Child+Convenience.swift */; };
+		4C2630C423EA0A9E00F33242 /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */; };
+		4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */; };
+		4CFCDE7223EA7ADA006222B8 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */; };
 		A2002F8023E780A00066B3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F7F23E780A00066B3BB /* AppDelegate.swift */; };
 		A2002F8223E780A00066B3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F8123E780A00066B3BB /* SceneDelegate.swift */; };
 		A2002F8423E780A00066B3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F8323E780A00066B3BB /* ViewController.swift */; };
@@ -34,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0E5A3623E912BF0068C2A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4C0E5A3923E912F40068C2A1 /* HomeChoreTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeChoreTracker.xcdatamodel; sourceTree = "<group>"; };
+		4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+Convenience.swift"; sourceTree = "<group>"; };
+		4C2630BC23E9E58900F33242 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		4C2630BE23E9F07B00F33242 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		4C2630C123EA08F300F33242 /* Child+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+Convenience.swift"; sourceTree = "<group>"; };
+		4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
+		4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberViewController.swift; sourceTree = "<group>"; };
+		4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
 		A2002F7C23E780A00066B3BB /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2002F7F23E780A00066B3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2002F8123E780A00066B3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2630BB23E9E56F00F33242 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C2630BC23E9E58900F33242 /* ModelController.swift */,
+			);
+			name = "Model Controller";
+			sourceTree = "<group>";
+		};
+		4C2630C023EA01DA00F33242 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */,
+				4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		A2002F7323E780A00066B3BB = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +128,8 @@
 		A2002F7E23E780A00066B3BB /* Home Chore Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4C2630C023EA01DA00F33242 /* View Controllers */,
+				4C2630BB23E9E56F00F33242 /* Model Controller */,
 				A2002F7F23E780A00066B3BB /* AppDelegate.swift */,
 				A2002F8123E780A00066B3BB /* SceneDelegate.swift */,
 				A2002F8323E780A00066B3BB /* ViewController.swift */,
@@ -124,6 +161,12 @@
 				A2E8E8BE23E8C5730095A345 /* ParentRepresentation.swift */,
 				A2E8E8C023E8C5BE0095A345 /* ChildRepresentation.swift */,
 				A2E8E8C223E8C66D0095A345 /* ChoreRepresentation.swift */,
+				4C0E5A3623E912BF0068C2A1 /* CoreDataStack.swift */,
+				4C0E5A3823E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld */,
+				4C2630BE23E9F07B00F33242 /* Bearer.swift */,
+				4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */,
+				4C2630C123EA08F300F33242 /* Child+Convenience.swift */,
+				4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,10 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */,
+				4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */,
+				4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */,
 				A2002F8423E780A00066B3BB /* ViewController.swift in Sources */,
+				4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */,
 				A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */,
+				4C0E5A5523E91FB80068C2A1 /* Parent+Convenience.swift in Sources */,
+				4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */,
+				4C0E5A3A23E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld in Sources */,
 				A2002F8023E780A00066B3BB /* AppDelegate.swift in Sources */,
 				A2E8E8BF23E8C5730095A345 /* ParentRepresentation.swift in Sources */,
+				4C2630C423EA0A9E00F33242 /* Chore+Convenience.swift in Sources */,
+				4CFCDE7223EA7ADA006222B8 /* RegisterAndLoginViewController.swift in Sources */,
 				A2E8E8C323E8C66D0095A345 /* ChoreRepresentation.swift in Sources */,
 				A2002F8223E780A00066B3BB /* SceneDelegate.swift in Sources */,
 			);
@@ -501,6 +553,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C0E5A3823E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C0E5A3923E912F40068C2A1 /* HomeChoreTracker.xcdatamodel */,
+			);
+			currentVersion = 4C0E5A3923E912F40068C2A1 /* HomeChoreTracker.xcdatamodel */;
+			path = HomeChoreTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A2002F7423E780A00066B3BB /* Project object */;
 }
