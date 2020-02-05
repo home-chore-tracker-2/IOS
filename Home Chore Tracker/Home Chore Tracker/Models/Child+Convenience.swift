@@ -25,6 +25,33 @@ extension Child {
                 }
             }
         }
-        return ChildRepresentation(id: Int(childID), points: Int(points), cleanStreak: Int(cleanStreak), username: username, password: password, chores: choresArray)
+        return ChildRepresentation(id: Int(childID), points: Int(points), cleanStreak: cleanStreak, username: username, password: password, chores: choresArray)
+    }
+    
+    @discardableResult convenience init(id: Int64,
+                                        points: Int64,
+                                        cleanStreak: Bool,
+                                        username: String,
+                                        password: String,
+                                        chores: NSSet,
+                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(context: context)
+        self.childID = id
+        self.points = points
+        self.cleanStreak = cleanStreak
+        self.username = username
+        self.password = password
+        self.chores = chores
+    }
+    
+    @discardableResult convenience init?(childRepresentation: ChildRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        
+        self.init(id: Int64(childRepresentation.id),
+                  points: Int64(childRepresentation.points),
+                  cleanStreak: childRepresentation.cleanStreak,
+                  username: childRepresentation.username,
+                  password: childRepresentation.password,
+                  chores: NSSet(object: childRepresentation.chores),
+                  context: context)
     }
 }

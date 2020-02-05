@@ -157,8 +157,8 @@
 				A2E8E8C223E8C66D0095A345 /* ChoreRepresentation.swift */,
 				4C0E5A3623E912BF0068C2A1 /* CoreDataStack.swift */,
 				4C0E5A3823E912F40068C2A1 /* HomeChoreTracker.xcdatamodeld */,
-				4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */,
 				4C2630BE23E9F07B00F33242 /* Bearer.swift */,
+				4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */,
 				4C2630C123EA08F300F33242 /* Child+Convenience.swift */,
 				4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */,
 			);
