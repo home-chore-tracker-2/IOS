@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mark Chore Complete View Controller-->
         <scene sceneID="K4w-eo-OVX">
             <objects>
-                <viewController id="0eG-DS-WdN" sceneMemberID="viewController">
+                <viewController id="0eG-DS-WdN" customClass="MarkChoreCompleteViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bk7-TJ-9qf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,6 +62,9 @@
                                 <state key="normal" title="Add Photo of Completed Chore">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPhotoOfChore:" destination="0eG-DS-WdN" eventType="touchUpInside" id="Ozy-6Q-9QI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-sO-Txp">
                                 <rect key="frame" x="20" y="749" width="374" height="40"/>
@@ -73,6 +76,9 @@
                                 <state key="normal" title="Complete Chore">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="completeChore:" destination="0eG-DS-WdN" eventType="touchUpInside" id="8Ec-iR-JMy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -98,6 +104,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qh4-Vc-Rdd"/>
                     </view>
+                    <connections>
+                        <outlet property="commentsTextView" destination="hEl-ha-6d3" id="p6N-6g-s28"/>
+                        <outlet property="photoPreviewImageView" destination="1pA-kx-Ur0" id="taD-pp-NHK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTq-c3-JKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

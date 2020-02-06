@@ -28,6 +28,7 @@
 		A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */; };
 		A24F410F23ECAA86003C0064 /* ChoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */; };
 		A24F411223ECC188003C0064 /* MarkChoreComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A24F411123ECC188003C0064 /* MarkChoreComplete.storyboard */; };
+		A24F411423ECC7AC003C0064 /* MarkChoreCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F411323ECC7AC003C0064 /* MarkChoreCompleteViewController.swift */; };
 		A2E8E8B723E8A5240095A345 /* Home_Chore_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8B623E8A5240095A345 /* Home_Chore_TrackerTests.swift */; };
 		A2E8E8BF23E8C5730095A345 /* ParentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8BE23E8C5730095A345 /* ParentRepresentation.swift */; };
 		A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8C023E8C5BE0095A345 /* ChildRepresentation.swift */; };
@@ -68,6 +69,7 @@
 		A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignChore.storyboard; sourceTree = "<group>"; };
 		A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoreDetail.storyboard; sourceTree = "<group>"; };
 		A24F411123ECC188003C0064 /* MarkChoreComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MarkChoreComplete.storyboard; sourceTree = "<group>"; };
+		A24F411323ECC7AC003C0064 /* MarkChoreCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkChoreCompleteViewController.swift; sourceTree = "<group>"; };
 		A2E8E8B423E8A5240095A345 /* Home Chore TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Home Chore TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E8E8B623E8A5240095A345 /* Home_Chore_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Chore_TrackerTests.swift; sourceTree = "<group>"; };
 		A2E8E8B823E8A5240095A345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */,
 				4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */,
+				A24F411323ECC7AC003C0064 /* MarkChoreCompleteViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */,
 				4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */,
 				A2002F8423E780A00066B3BB /* ViewController.swift in Sources */,
+				A24F411423ECC7AC003C0064 /* MarkChoreCompleteViewController.swift in Sources */,
 				4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */,
 				A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */,
 				4C0E5A5523E91FB80068C2A1 /* Parent+Convenience.swift in Sources */,
