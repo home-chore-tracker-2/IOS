@@ -13,6 +13,8 @@ class MarkChoreCompleteViewController: UIViewController {
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var photoPreviewImageView: UIImageView!
     
+    var assignedChore: ChoreRepresentation?
+    
     let pickerController = UIImagePickerController()
 
     override func viewDidLoad() {
