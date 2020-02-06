@@ -74,6 +74,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hi6-bN-RZu" kind="show" id="Ifm-b5-4a6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -117,6 +120,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pv-ba-O8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="200.00000000000003" y="184.82142857142856"/>
+        </scene>
+        <!--ChoreDetail-->
+        <scene sceneID="jLd-AO-lQZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChoreDetail" id="hi6-bN-RZu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wa4-jd-rPh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KrQ-TB-Lpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="185"/>
         </scene>
     </scenes>
 </document>
