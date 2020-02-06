@@ -13,12 +13,12 @@
                 <viewControllerPlaceholder storyboardName="SignUp:LogIn" id="aAF-8l-yYS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lV4-dE-Fhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="-362"/>
+            <point key="canvasLocation" x="2613" y="-359"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FamilyHomeViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FamilyMemberCell" textLabel="ze9-sQ-Vb9" style="IBUITableViewCellStyleDefault" id="Slc-HH-ZsL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FamilyMemberCell" textLabel="ze9-sQ-Vb9" style="IBUITableViewCellStyleDefault" id="Slc-HH-ZsL" customClass="FamilyMemberTableViewCell" customModule="Home_Chore_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="344" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Slc-HH-ZsL" id="cut-Ea-6xa">
@@ -53,6 +53,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="familyMemberNameLabel" destination="ze9-sQ-Vb9" id="X7O-ZP-3T2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -67,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oMm-fp-5k4" kind="presentation" id="eir-PE-YgD"/>
+                                    <segue destination="oMm-fp-5k4" kind="presentation" identifier="AddFamilyMemberSegue" id="eir-PE-YgD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-Ne-iVF">
@@ -97,6 +100,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="sPR-wN-SGI"/>
+                    <connections>
+                        <outlet property="familyMembersTableView" destination="yj8-2Z-TWj" id="Axn-rS-eGq"/>
+                        <segue destination="aAF-8l-yYS" kind="presentation" identifier="SignUpOrInModalSegue" id="Qsd-aS-5hG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,12 +130,11 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Kth-st-7X1"/>
-                        <segue destination="aAF-8l-yYS" kind="presentation" id="7Yx-V7-isb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZC-9g-mjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1062" y="138"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IRT-rc-fIK">

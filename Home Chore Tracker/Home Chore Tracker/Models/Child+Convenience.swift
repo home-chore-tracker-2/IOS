@@ -46,12 +46,17 @@ extension Child {
     
     @discardableResult convenience init?(childRepresentation: ChildRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
+        guard
+            let points = childRepresentation.points,
+            let chores = childRepresentation.chores
+            else { return nil }
+        
         self.init(id: Int64(childRepresentation.id),
-                  points: Int64(childRepresentation.points),
-                  cleanStreak: childRepresentation.cleanStreak,
+                  points: Int64(points),
+                  cleanStreak: childRepresentation.cleanStreak ?? false,
                   username: childRepresentation.username,
                   password: childRepresentation.password,
-                  chores: NSSet(object: childRepresentation.chores),
+                  chores: NSSet(object: chores),
                   context: context)
     }
 }

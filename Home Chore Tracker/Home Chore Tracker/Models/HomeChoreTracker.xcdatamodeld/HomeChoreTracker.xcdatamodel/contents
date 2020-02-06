@@ -4,7 +4,7 @@
         <attribute name="childID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="cleanStreak" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="password" attributeType="String"/>
-        <attribute name="points" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="points" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="username" attributeType="String"/>
         <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="child" inverseEntity="Chore"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parent" inverseName="children" inverseEntity="Parent"/>
@@ -22,7 +22,7 @@
     </entity>
     <entity name="Parent" representedClassName="Parent" syncable="YES" codeGenerationType="class">
         <attribute name="email" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="password" attributeType="String"/>
         <attribute name="username" attributeType="String"/>
         <relationship name="children" toMany="YES" deletionRule="Nullify" destinationEntity="Child" inverseName="parent" inverseEntity="Child"/>

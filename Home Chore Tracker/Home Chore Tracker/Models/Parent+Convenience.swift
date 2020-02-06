@@ -45,14 +45,15 @@ extension Parent {
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         guard
-            let id = parentRepresentation.id
+            let id = parentRepresentation.id,
+            let children = parentRepresentation.children
             else { return nil }
         
         self.init(id: Int64(id),
                   username: parentRepresentation.username,
                   password: parentRepresentation.password,
                   email: parentRepresentation.email,
-                  children: NSSet(object: parentRepresentation.children),
+                  children: NSSet(object: children),
                   context: context)
     }
 }

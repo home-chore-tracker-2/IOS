@@ -53,19 +53,15 @@ class RegisterAndLoginViewController: UIViewController {
         guard let choreTrackerController = choreTrackerController else { return }
         if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty,
             let email = emailTextField.text, !email.isEmpty {
-            let parent = ParentRepresentation(username: username, password: password, email: email)
+            let user = User(username: username, password: password, email: email)
             
             if loginType == .register {
-                choreTrackerController.parentRegister(with: parent) { error in
+                choreTrackerController.parentSignUp(user: user) { error in
                     if let error = error {
                         NSLog("Error occured during sign up: \(error)")
                     } else {
                         DispatchQueue.global().async {
-                            do {
-                                try CoreDataStack.shared.save()
-                            } catch {
-                                
-                            }
+                            choreTrackerController.saveToPersistentStore()
                             
                         }
                         DispatchQueue.main.async {
@@ -77,12 +73,13 @@ class RegisterAndLoginViewController: UIViewController {
                                 
                                 self.registerOrLoginSegmentedControl.selectedSegmentIndex = 1
                                 self.signUpOrInButton.setTitle("Sign In", for: .normal)
+                                self.registerOrLoginLabel.text = "Sign In"
                             }
                         }
                     }
                 }
             } else if loginType == .parentLogin {
-                choreTrackerController.parentLogin(with: parent) { error in
+                choreTrackerController.parentLogin(user: user) { error in
                     if let error = error {
                         NSLog("Error occured during sign in: \(error)")
                     } else {
