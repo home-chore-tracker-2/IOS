@@ -26,6 +26,7 @@
 		A2002F9623E7E8AE0066B3BB /* AddFamilyMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */; };
 		A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */; };
 		A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */; };
+		A24F410F23ECAA86003C0064 /* ChoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */; };
 		A2E8E8B723E8A5240095A345 /* Home_Chore_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8B623E8A5240095A345 /* Home_Chore_TrackerTests.swift */; };
 		A2E8E8BF23E8C5730095A345 /* ParentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8BE23E8C5730095A345 /* ParentRepresentation.swift */; };
 		A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8E8C023E8C5BE0095A345 /* ChildRepresentation.swift */; };
@@ -64,6 +65,7 @@
 		A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddFamilyMember.storyboard; sourceTree = "<group>"; };
 		A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildDetail.storyboard; sourceTree = "<group>"; };
 		A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignChore.storyboard; sourceTree = "<group>"; };
+		A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoreDetail.storyboard; sourceTree = "<group>"; };
 		A2E8E8B423E8A5240095A345 /* Home Chore TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Home Chore TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E8E8B623E8A5240095A345 /* Home_Chore_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Chore_TrackerTests.swift; sourceTree = "<group>"; };
 		A2E8E8B823E8A5240095A345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */,
 				A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */,
 				A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */,
+				A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */,
 				A2002F8823E780A10066B3BB /* Assets.xcassets */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
 				A2002F8D23E780A10066B3BB /* Info.plist */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */,
+				A24F410F23ECAA86003C0064 /* ChoreDetail.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
 				A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */,
 				A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */,
