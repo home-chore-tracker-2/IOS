@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m8a-Xp-3C9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afU-jB-fe2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -121,22 +121,10 @@
             </objects>
             <point key="canvasLocation" x="2757" y="138"/>
         </scene>
-        <!--ChildsChores-->
-        <scene sceneID="9bI-2N-2cn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ChildsChores" id="0IL-dV-pC2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yiB-P3-dU3"/>
-                    <navigationItem key="navigationItem" id="VHw-qO-LWb"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xif-uk-wyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3084" y="-153"/>
-        </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="z5n-MX-OoG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afU-jB-fe2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="rSj-Of-rUx"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="x4E-1l-BF3">
@@ -152,30 +140,5 @@
             </objects>
             <point key="canvasLocation" x="1062" y="138"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="IRT-rc-fIK">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m8a-Xp-3C9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8mc-D8-o4j">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="afU-jB-fe2" kind="relationship" relationship="viewControllers" id="s9K-o5-fWt"/>
-                        <segue destination="aAF-8l-yYS" kind="relationship" relationship="viewControllers" id="j3g-0V-q6b"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mm7-8a-f0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="96" y="138"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="j3g-0V-q6b"/>
-    </inferredMetricsTieBreakers>
 </document>

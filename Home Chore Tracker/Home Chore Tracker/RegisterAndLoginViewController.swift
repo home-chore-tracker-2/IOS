@@ -89,7 +89,7 @@ class RegisterAndLoginViewController: UIViewController {
                         NSLog("Error occured during parent sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
-                            self.dismiss(animated: true, completion: nil)
+                            self.navigationController?.popViewController(animated: true)
                         }
                     }
                 }
@@ -99,13 +99,12 @@ class RegisterAndLoginViewController: UIViewController {
                         NSLog("Error occured during child sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
-//                            self.dismiss(animated: true, completion: nil)
-                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
+                            self.navigationController?.popViewController(animated: true)
+//                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
                         }
                     }
                 }
             }
         }
-        
     }
 }

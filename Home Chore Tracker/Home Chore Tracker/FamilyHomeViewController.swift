@@ -45,6 +45,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,9 +66,9 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let count = fetchedResultsController.fetchedObjects?.count else { return nil }
+//        guard let count = fetchedResultsController.fetchedObjects?.count else { return nil }
         
-        if count <= 1 {
+        if fetchedResultsController.fetchedObjects!.count <= 1 {
             return "Child"
         } else {
             return "Children"

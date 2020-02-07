@@ -31,9 +31,11 @@ class ChoreTrackerController {
     
     private var bearer: Bearer?
     
-    private let encoder = JSONEncoder()
+    var newUserID: Int = 12
     
-    private let decoder = JSONDecoder()
+//    private let encoder = JSONEncoder()
+    
+//    private let decoder = JSONDecoder()
     
     private let context = CoreDataStack.shared.container.newBackgroundContext()
     
@@ -52,6 +54,7 @@ class ChoreTrackerController {
     }
     
     init() {
+        fetchParentAndChildren()
         fetchChores()
     }
     
@@ -71,7 +74,7 @@ class ChoreTrackerController {
             return
         }
         
-        URLSession.shared.dataTask(with: request) { _, response, error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 201 {
                 NSLog("HTTP URL parent register response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
@@ -82,20 +85,20 @@ class ChoreTrackerController {
                 return
             }
             
-//            guard let data = data else {
-//                NSLog("Bad data")
-//                completion(error)
-//                return
-//            }
-//            do {
-//                let parentRep = try JSONDecoder().decode(ParentRepresentation.self, from: data)
-//                Parent(parentRepresentation: parentRep)
+            guard let data = data else {
+                NSLog("No data returned from data task.")
+                completion(error)
+                return
+            }
+            do {
+                let userID = try JSONDecoder().decode(UserID.self, from: data)
+                self.newUserID = userID.id
 //                try CoreDataStack.shared.save(context: self.context)
-//            } catch {
-//                NSLog("Error decoding data \(error)")
-//                completion(error)
-//                return 
-//            }
+            } catch {
+                NSLog("Error decoding data \(error)")
+                completion(error)
+                return
+            }
             completion(nil)
         }.resume()
     }
@@ -184,7 +187,7 @@ class ChoreTrackerController {
 //                completion(error)
 //                return
 //            }
-//            completion(nil)
+            completion(nil)
         }.resume()
     }
     
@@ -206,7 +209,7 @@ class ChoreTrackerController {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                NSLog("HTTP URL parent login response: \(response)")
+                NSLog("HTTP URL child login response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -227,6 +230,51 @@ class ChoreTrackerController {
                 return
             }
             completion(nil)
+        }.resume()
+    }
+    
+    func fetchParentAndChildren(completion: @escaping CompletionHandler = { _ in }) {
+        guard let bearer = bearer else { return }
+        
+        let userWithChildrenURL = baseURL.appendingPathComponent("user").appendingPathComponent("\(newUserID)")
+        var request = URLRequest(url: userWithChildrenURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("HTTP URL GET request response: \(response)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            if let error = error {
+                NSLog("Error GETing user and children data: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned by data task")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            do {
+                let parentRep = try JSONDecoder().decode(ParentRepresentation.self, from: data)
+                Parent(parentRepresentation: parentRep)
+                try CoreDataStack.shared.save(context: self.context)
+            } catch {
+                NSLog("Error decoding parent representation object: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
         }.resume()
     }
     
