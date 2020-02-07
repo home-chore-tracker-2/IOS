@@ -99,8 +99,8 @@ class RegisterAndLoginViewController: UIViewController {
                         NSLog("Error occured during child sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
-                            self.navigationController?.popViewController(animated: true)
-//                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
+//                            self.navigationController?.popViewController(animated: true)
+                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
                         }
                     }
                 }
