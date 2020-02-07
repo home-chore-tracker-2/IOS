@@ -36,13 +36,14 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         familyMembersTableView.dataSource = self
+        if choreTrackerController.isUserLoggedIn == false {
+            performSegue(withIdentifier: "SignUpOrInModalSegue", sender: self)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if choreTrackerController.isUserLoggedIn == false {
-            performSegue(withIdentifier: "SignUpOrInModalSegue", sender: self)
-        }
+        
     }
     
     
@@ -66,12 +67,11 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        guard let count = fetchedResultsController.fetchedObjects?.count else { return nil }
-        
-        if fetchedResultsController.fetchedObjects!.count <= 1 {
-            return "Child"
-        } else {
+        switch section {
+        case 0:
             return "Children"
+        default:
+            return ""
         }
     }
     
@@ -91,6 +91,9 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
             guard let addFamilyMemberVC = segue.destination as? AddFamilyMemberViewController else { return }
             addFamilyMemberVC.choreTrackerController = choreTrackerController
             addFamilyMemberVC.childID = choreTrackerController.childID
+        } else if segue.identifier == "ChildsChoresSegue" {
+            guard let childsChoresVC = segue.destination as? ChildChoresViewController else { return }
+            childsChoresVC.choreTrackerController = choreTrackerController  
         }
     }
 }

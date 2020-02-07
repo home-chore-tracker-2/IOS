@@ -98,15 +98,15 @@
             </objects>
             <point key="canvasLocation" x="168" y="169"/>
         </scene>
-        <!--ChildsChores-->
+        <!--Main-->
         <scene sceneID="IvX-S7-g7T">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChildsChores" id="Mz8-xq-EjA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" id="Mz8-xq-EjA" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XKg-9i-KAF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq7-GO-1LL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="158"/>
+            <point key="canvasLocation" x="793" y="169"/>
         </scene>
     </scenes>
 </document>
