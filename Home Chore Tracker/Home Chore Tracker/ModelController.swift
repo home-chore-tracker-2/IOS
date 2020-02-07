@@ -71,7 +71,7 @@ class ChoreTrackerController {
             return
         }
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse, response.statusCode != 201 {
                 NSLog("HTTP URL parent register response: \(response)")
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
@@ -82,20 +82,20 @@ class ChoreTrackerController {
                 return
             }
             
-            guard let data = data else {
-                NSLog("Bad data")
-                completion(error)
-                return
-            }
-            do {
-                let parentRep = try JSONDecoder().decode(ParentRepresentation.self, from: data)
-                Parent(parentRepresentation: parentRep)
-                try CoreDataStack.shared.save(context: self.context)
-            } catch {
-                NSLog("Error decoding data \(error)")
-                completion(error)
-                return 
-            }
+//            guard let data = data else {
+//                NSLog("Bad data")
+//                completion(error)
+//                return
+//            }
+//            do {
+//                let parentRep = try JSONDecoder().decode(ParentRepresentation.self, from: data)
+//                Parent(parentRepresentation: parentRep)
+//                try CoreDataStack.shared.save(context: self.context)
+//            } catch {
+//                NSLog("Error decoding data \(error)")
+//                completion(error)
+//                return 
+//            }
             completion(nil)
         }.resume()
     }
@@ -320,7 +320,6 @@ class ChoreTrackerController {
             else { return }
         parent.id = Int64(repID)
         parent.username = representation.username
-        parent.password = representation.password
         parent.email = representation.email
         parent.children = NSSet(object: children)
         saveToPersistentStore()
@@ -334,7 +333,6 @@ class ChoreTrackerController {
             else { return }
         child.childID = Int64(representation.id)
         child.username = representation.username
-        child.password = representation.password
         child.cleanStreak = cleanStreak
         child.points = Int64(points)
         child.chores = NSSet(object: chores)

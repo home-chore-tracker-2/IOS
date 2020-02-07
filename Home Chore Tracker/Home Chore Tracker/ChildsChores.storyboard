@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Child Chores View Controller-->
+        <!--Chores-->
         <scene sceneID="T1Q-2P-9Q9">
             <objects>
                 <viewController storyboardIdentifier="ChildsChores" id="88L-lz-tvx" customClass="ChildChoresViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,14 +29,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="MW2-x5-aOW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChoreCell" id="MW2-x5-aOW" customClass="ChildChoreTableViewCell" customModule="Home_Chore_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="344" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MW2-x5-aOW" id="8hG-cC-369">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chore Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E63-iq-Ild">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chore Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPd-Ft-bkS">
                                                     <rect key="frame" x="20" y="11" width="117" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -45,6 +45,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="choreNameLabel" destination="bPd-Ft-bkS" id="IvL-zf-Rr5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -57,10 +60,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SUv-qk-Hxh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Chores" image="c.circle.fill" catalog="system" id="48u-wD-OAT"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="childChoresTableView" destination="VNh-jy-J68" id="Fb2-9C-c7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyS-99-gW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-69.565217391304358" y="125.89285714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="c.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

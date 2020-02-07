@@ -54,6 +54,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpOrInButtonTapped:" destination="E3H-sL-xvQ" eventType="touchUpInside" id="WY2-dK-86I"/>
+                                    <segue destination="Mz8-xq-EjA" kind="show" identifier="ChildsChoresSegue" id="boD-9q-Yjt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-nO-uC3">
@@ -98,6 +99,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKe-Y6-SXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="171"/>
+        </scene>
+        <!--ChildsChores-->
+        <scene sceneID="IvX-S7-g7T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChildsChores" id="Mz8-xq-EjA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XKg-9i-KAF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fq7-GO-1LL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="158"/>
         </scene>
     </scenes>
     <resources>

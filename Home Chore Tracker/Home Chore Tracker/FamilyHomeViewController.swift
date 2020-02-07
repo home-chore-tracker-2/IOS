@@ -13,8 +13,8 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
     let choreTrackerController = ChoreTrackerController()
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Parent> = {
-        let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
+    lazy var fetchedResultsController: NSFetchedResultsController<Child> = {
+        let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
         let context = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "username", cacheName: nil)
@@ -36,7 +36,6 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         familyMembersTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,9 +58,9 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = familyMembersTableView.dequeueReusableCell(withIdentifier: "FamilyMemberCell", for: indexPath) as? FamilyMemberTableViewCell else { return UITableViewCell()}
         
-        let parent = fetchedResultsController.object(at: indexPath)
-        cell.parent = parent
-        cell.familyMemberNameLabel.text = parent.username
+        let child = fetchedResultsController.object(at: indexPath)
+        cell.child = child
+        cell.childNameLabel.text = child.username
         return cell
     }
     

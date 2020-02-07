@@ -15,6 +15,7 @@
 		4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C123EA08F300F33242 /* Child+Convenience.swift */; };
 		4C2630C423EA0A9E00F33242 /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */; };
 		4C376FAC23ECBC8A006646B8 /* ChildChoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */; };
+		4C3D144823ED423C00CFBDCF /* ChildChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */; };
 		4C40291523EBDE2F00F0D95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291423EBDE2F00F0D95B /* User.swift */; };
 		4C40291723EBF43700F0D95B /* ChildUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291623EBF43700F0D95B /* ChildUser.swift */; };
 		4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */; };
@@ -56,6 +57,7 @@
 		4C2630C123EA08F300F33242 /* Child+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+Convenience.swift"; sourceTree = "<group>"; };
 		4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
 		4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoresViewController.swift; sourceTree = "<group>"; };
+		4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoreTableViewCell.swift; sourceTree = "<group>"; };
 		4C40291423EBDE2F00F0D95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4C40291623EBF43700F0D95B /* ChildUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildUser.swift; sourceTree = "<group>"; };
 		4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildsChores.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */,
+				4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3D144823ED423C00CFBDCF /* ChildChoreTableViewCell.swift in Sources */,
 				4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */,
 				4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */,
 				4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */,
@@ -479,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -10,13 +10,14 @@ import UIKit
 
 class FamilyMemberTableViewCell: UITableViewCell {
 
-    var parent: Parent? {
+    var child: Child? {
         didSet {
             updateViews()
         }
     }
     
-    @IBOutlet weak var familyMemberNameLabel: UILabel!
+    @IBOutlet weak var childNameLabel: UILabel!
+
     
     
 

@@ -12,8 +12,7 @@ import CoreData
 extension Child {
     var childRepresentation: ChildRepresentation? {
         guard
-            let username = username,
-            let password = password
+            let username = username
             else { return nil }
         
         var choresArray = [ChoreRepresentation]()
@@ -25,14 +24,13 @@ extension Child {
                 }
             }
         }
-        return ChildRepresentation(id: Int(childID), points: Int(points), cleanStreak: cleanStreak, username: username, password: password, chores: choresArray)
+        return ChildRepresentation(id: Int(childID), points: Int(points), cleanStreak: cleanStreak, username: username, chores: choresArray)
     }
     
     @discardableResult convenience init(id: Int64,
                                         points: Int64,
                                         cleanStreak: Bool,
                                         username: String,
-                                        password: String,
                                         chores: NSSet?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
@@ -40,7 +38,6 @@ extension Child {
         self.points = points
         self.cleanStreak = cleanStreak
         self.username = username
-        self.password = password
         self.chores = chores
     }
     
@@ -66,7 +63,6 @@ extension Child {
         points: Int64(childRepresentation.points ?? 0),
                   cleanStreak: childRepresentation.cleanStreak ?? false,
                   username: childRepresentation.username,
-                  password: childRepresentation.password,
                   chores: choresSet,
                   context: context)
     }
