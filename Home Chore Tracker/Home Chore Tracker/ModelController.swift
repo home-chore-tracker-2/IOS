@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 enum HTTPMethod: String {
     case get = "GET"
@@ -333,6 +334,45 @@ class ChoreTrackerController {
                 DispatchQueue.main.async {
                     completion(error)
                 }
+                return
+            }
+        }.resume()
+    }
+    
+    func putChore(with image: UIImage, childRep: inout ChildRepresentation, childID: Int, choreID: Int, completion: @escaping (NetworkError?) -> Void) {
+        guard let bearer = bearer else {
+            completion(.badAuth)
+            return
+        }
+        let imageData = image.pngData()
+        
+        childRep.chores?[choreID].picture = imageData
+        
+        let requestURL = baseURL.appendingPathComponent("child").appendingPathComponent("\(childID)")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            let jsonChildInfo = try JSONEncoder().encode(childRep)
+            request.httpBody = jsonChildInfo
+        } catch {
+            NSLog("Error encoding child info to PUT: \(error)")
+            completion(.noEncode)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let error = error {
+                NSLog("\(error)")
+                completion(.otherError)
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("HTTPURLResponse status code was not 200. Response status code was \(response.statusCode)")
+                completion(.otherError)
                 return
             }
         }.resume()

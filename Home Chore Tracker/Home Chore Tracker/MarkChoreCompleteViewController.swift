@@ -13,8 +13,9 @@ class MarkChoreCompleteViewController: UIViewController {
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var photoPreviewImageView: UIImageView!
     
+    var choreTrackerController: ChoreTrackerController?
     var assignedChore: ChoreRepresentation?
-    
+    var assignedChoreIndexPath: IndexPath?
     let pickerController = UIImagePickerController()
 
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class MarkChoreCompleteViewController: UIViewController {
     }
     
     @IBAction func completeChore(_ sender: UIButton) {
+        guard let choreTrackerController = self.choreTrackerController else { return }
         
     }
     

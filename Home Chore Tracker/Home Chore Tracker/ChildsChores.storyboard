@@ -47,6 +47,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="choreNameLabel" destination="bPd-Ft-bkS" id="IvL-zf-Rr5"/>
+                                            <segue destination="bVU-fK-RTd" kind="presentation" identifier="ChoreDetailModalSegue" id="L5e-E2-b7V"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -68,6 +69,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyS-99-gW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-69.565217391304358" y="125.89285714285714"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="U5Y-Zr-7MS">
+            <objects>
+                <viewControllerPlaceholder id="bVU-fK-RTd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7u-Kl-PNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="126"/>
         </scene>
     </scenes>
 </document>

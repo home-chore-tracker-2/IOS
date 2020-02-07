@@ -27,7 +27,7 @@ extension Chore {
                                         choreName: String,
                                         description: String,
                                         dueDate: Date,
-                                        picture: URL,
+                                        picture: Data,
                                         completed: Bool,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
@@ -49,7 +49,7 @@ extension Chore {
                   choreName: choreRepresentation.choreName,
                   description: choreRepresentation.description,
                   dueDate: choreRepresentation.dueDate,
-                  picture: choreRepresentation.picture,
+                  picture: choreRepresentation.picture!, // TODO: safely unwrap
                   completed: choreRepresentation.completed,
                   context: context)
     }
