@@ -11,8 +11,6 @@ import CoreData
 
 class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
-    
-    
     let choreTrackerController = ChoreTrackerController()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Parent> = {
@@ -29,7 +27,10 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+    }
     
     
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if choreTrackerController.isUserLoggedIn == false {
             performSegue(withIdentifier: "SignUpOrInModalSegue", sender: self)
         }
@@ -47,7 +49,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        fetchedResultsController.sections?.count ?? 2
+        return fetchedResultsController.sections?.count ?? 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,24 +59,26 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = familyMembersTableView.dequeueReusableCell(withIdentifier: "FamilyMemberCell", for: indexPath) as? FamilyMemberTableViewCell else { return UITableViewCell()}
         
-        let user = fetchedResultsController.object(at: indexPath)
-        cell.user = user
-        cell.familyMemberNameLabel.text = user.username
+        let parent = fetchedResultsController.object(at: indexPath)
+        cell.parent = parent
+        cell.familyMemberNameLabel.text = parent.username
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Parent"
-        case 1:
-            if familyMembersTableView.numberOfRows(inSection: 1) <= 1 {
-                return "Child"
-            } else {
-                return "Children"
-            }
-        default:
-            return ""
+        guard let count = fetchedResultsController.fetchedObjects?.count else { return nil }
+        
+        if count <= 1 {
+            return "Child"
+        } else {
+            return "Children"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let object = fetchedResultsController.object(at: indexPath)
+            choreTrackerController.deleteObject(for: object)
         }
     }
     // MARK: - Navigation
@@ -86,6 +90,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
         } else if segue.identifier == "AddFamilyMemberSegue" {
             guard let addFamilyMemberVC = segue.destination as? AddFamilyMemberViewController else { return }
             addFamilyMemberVC.choreTrackerController = choreTrackerController
+            addFamilyMemberVC.childID = choreTrackerController.childID
         }
     }
 }

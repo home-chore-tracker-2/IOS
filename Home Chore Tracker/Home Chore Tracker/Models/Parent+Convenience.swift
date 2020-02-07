@@ -31,7 +31,7 @@ extension Parent {
                                         username: String,
                                         password: String,
                                         email: String,
-                                        children: NSSet,
+                                        children: NSSet?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
@@ -44,16 +44,29 @@ extension Parent {
     @discardableResult convenience init?(parentRepresentation: ParentRepresentation,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard
-            let id = parentRepresentation.id,
-            let children = parentRepresentation.children
-            else { return nil }
+        var children: [Child] = []
+        
+        if let childrenRep = parentRepresentation.children, childrenRep.count > 0 {
+            for childRep in childrenRep {
+                if let child = Child(childRepresentation: childRep, context: context) {
+                    children.append(child)
+                }
+            }
+        }
+        
+        var childrenSet: NSSet?
+        
+        if children.count > 0 {
+            childrenSet = NSSet(array: children)
+        }
+        
+        guard let id = parentRepresentation.id else { return nil }
         
         self.init(id: Int64(id),
                   username: parentRepresentation.username,
                   password: parentRepresentation.password,
                   email: parentRepresentation.email,
-                  children: NSSet(object: children),
+                  children: childrenSet,
                   context: context)
     }
 }

@@ -33,7 +33,7 @@ extension Child {
                                         cleanStreak: Bool,
                                         username: String,
                                         password: String,
-                                        chores: NSSet,
+                                        chores: NSSet?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.childID = id
@@ -46,17 +46,28 @@ extension Child {
     
     @discardableResult convenience init?(childRepresentation: ChildRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard
-            let points = childRepresentation.points,
-            let chores = childRepresentation.chores
-            else { return nil }
+        var chores: [Chore] = []
+        
+        if let choresRep = childRepresentation.chores, choresRep.count > 0 {
+            for choreRep in choresRep {
+                if let chore = Chore(choreRepresentation: choreRep, context: context) {
+                    chores.append(chore)
+                }
+            }
+        }
+        
+        var choresSet: NSSet?
+        
+        if chores.count > 0 {
+            choresSet = NSSet(array: chores)
+        }
         
         self.init(id: Int64(childRepresentation.id),
-                  points: Int64(points),
+        points: Int64(childRepresentation.points ?? 0),
                   cleanStreak: childRepresentation.cleanStreak ?? false,
                   username: childRepresentation.username,
                   password: childRepresentation.password,
-                  chores: NSSet(object: chores),
+                  chores: choresSet,
                   context: context)
     }
 }

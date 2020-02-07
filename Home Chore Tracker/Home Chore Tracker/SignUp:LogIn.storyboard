@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register And Login View Controller-->
+        <!--Sign In-->
         <scene sceneID="7Qm-aO-W5a">
             <objects>
-                <viewController id="E3H-sL-xvQ" customClass="RegisterAndLoginViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpOrLogIn" id="E3H-sL-xvQ" customClass="RegisterAndLoginViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iMw-Ny-1Y6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,6 +84,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pc2-hB-mfh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Sign In" image="smiley" catalog="system" id="eeL-bP-xUw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="IGO-Sx-cK4" id="kar-AH-7c1"/>
                         <outlet property="passwordTextField" destination="Fsz-1w-AhC" id="3PJ-7S-595"/>
@@ -98,4 +100,7 @@
             <point key="canvasLocation" x="162" y="171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="smiley" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

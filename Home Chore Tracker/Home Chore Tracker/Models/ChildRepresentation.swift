@@ -13,5 +13,5 @@ struct ChildRepresentation: Codable {
     var points: Int? = 0
     var cleanStreak: Bool? = false
     var username, password: String
-    var chores: [ChoreRepresentation]? = []
+    var chores: [ChoreRepresentation]?
 }

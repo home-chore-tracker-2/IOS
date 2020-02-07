@@ -34,26 +34,31 @@ class RegisterAndLoginViewController: UIViewController {
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        guard let emailTextField = emailTextField else { return }
+        
         if sender.selectedSegmentIndex == 0 {
             loginType = .register
             signUpOrInButton.setTitle("Sign Up", for: .normal)
             registerOrLoginLabel.text = "Create An Account"
+            emailTextField.isHidden = false
         } else if sender.selectedSegmentIndex == 1 {
             loginType = .parentLogin
             signUpOrInButton.setTitle("Sign In", for: .normal)
             registerOrLoginLabel.text = "User Sign In"
+            emailTextField.isHidden = false
         } else if sender.selectedSegmentIndex == 2 {
             loginType = .childLogin
             signUpOrInButton.setTitle("Sign In", for: .normal)
             registerOrLoginLabel.text = "Child Sign In"
+            emailTextField.isHidden = true
         }
     }
     
     @IBAction func signUpOrInButtonTapped(_ sender: UIButton) {
         guard let choreTrackerController = choreTrackerController else { return }
-        if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty,
-            let email = emailTextField.text, !email.isEmpty {
+        if let username = usernameTextField.text, let password = passwordTextField.text, let email = emailTextField.text {
             let user = User(username: username, password: password, email: email)
+            let child = ChildUser(username: username, password: password)
             
             if loginType == .register {
                 choreTrackerController.parentSignUp(user: user) { error in
@@ -81,14 +86,26 @@ class RegisterAndLoginViewController: UIViewController {
             } else if loginType == .parentLogin {
                 choreTrackerController.parentLogin(user: user) { error in
                     if let error = error {
-                        NSLog("Error occured during sign in: \(error)")
+                        NSLog("Error occured during parent sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
                 }
+            } else if loginType == .childLogin {
+                choreTrackerController.childLogin(with: child) { error in
+                    if let error = error {
+                        NSLog("Error occured during child sign in: \(error)")
+                    } else {
+                        DispatchQueue.main.async {
+//                            self.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
+                        }
+                    }
+                }
             }
         }
+        
     }
 }

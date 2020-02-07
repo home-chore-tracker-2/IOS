@@ -10,10 +10,12 @@
         <!--SignUp:LogIn-->
         <scene sceneID="5rR-CG-B8l">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignUp:LogIn" id="aAF-8l-yYS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignUp:LogIn" id="aAF-8l-yYS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ert-OC-BSc"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lV4-dE-Fhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="-359"/>
+            <point key="canvasLocation" x="2471" y="-256"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -57,6 +59,14 @@
                                             <outlet property="familyMemberNameLabel" destination="ze9-sQ-Vb9" id="X7O-ZP-3T2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Dy7-ht-vG3">
+                                        <rect key="frame" x="0.0" y="115.5" width="344" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dy7-ht-vG3" id="zXQ-L7-lyn">
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qze-c2-Shs">
@@ -70,7 +80,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oMm-fp-5k4" kind="presentation" identifier="AddFamilyMemberSegue" id="eir-PE-YgD"/>
+                                    <segue destination="oMm-fp-5k4" kind="presentation" identifier="AddFamilyMemberSegue" modalPresentationStyle="fullScreen" id="eir-PE-YgD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-Ne-iVF">
@@ -94,6 +104,7 @@
                             <constraint firstItem="pS7-Ne-iVF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="dwZ-CW-zwY"/>
                             <constraint firstItem="Qze-c2-Shs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="iiV-4v-AFH"/>
                             <constraint firstItem="Qze-c2-Shs" firstAttribute="top" secondItem="yj8-2Z-TWj" secondAttribute="bottom" constant="16" id="lQo-1c-fje"/>
+                            <constraint firstItem="yj8-2Z-TWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="q8z-C1-6DJ"/>
                             <constraint firstItem="pS7-Ne-iVF" firstAttribute="top" secondItem="Qze-c2-Shs" secondAttribute="bottom" constant="16" id="saK-Ja-VDZ"/>
                             <constraint firstItem="yj8-2Z-TWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="vne-k8-azu"/>
                         </constraints>
@@ -102,7 +113,8 @@
                     <navigationItem key="navigationItem" title="Home" id="sPR-wN-SGI"/>
                     <connections>
                         <outlet property="familyMembersTableView" destination="yj8-2Z-TWj" id="Axn-rS-eGq"/>
-                        <segue destination="aAF-8l-yYS" kind="presentation" identifier="SignUpOrInModalSegue" id="Qsd-aS-5hG"/>
+                        <segue destination="aAF-8l-yYS" kind="presentation" identifier="SignUpOrInModalSegue" modalPresentationStyle="fullScreen" id="Qsd-aS-5hG"/>
+                        <segue destination="0IL-dV-pC2" kind="show" identifier="ChildsChoresSegue" id="LAQ-mm-pak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,12 +129,24 @@
             </objects>
             <point key="canvasLocation" x="2757" y="138"/>
         </scene>
+        <!--ChildsChores-->
+        <scene sceneID="9bI-2N-2cn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChildsChores" id="0IL-dV-pC2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yiB-P3-dU3"/>
+                    <navigationItem key="navigationItem" id="VHw-qO-LWb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xif-uk-wyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="-153"/>
+        </scene>
         <!--Home-->
         <scene sceneID="z5n-MX-OoG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afU-jB-fe2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="Cko-NZ-e1S"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="rSj-Of-rUx"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="x4E-1l-BF3">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,15 +171,21 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="afU-jB-fe2" kind="relationship" relationship="viewControllers" id="Nj0-qz-r8j"/>
+                        <segue destination="afU-jB-fe2" kind="relationship" relationship="viewControllers" id="s9K-o5-fWt"/>
+                        <segue destination="aAF-8l-yYS" kind="relationship" relationship="viewControllers" id="j3g-0V-q6b"/>
+                        <segue destination="0IL-dV-pC2" kind="relationship" relationship="viewControllers" id="Keg-57-Uh0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mm7-8a-f0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="96" y="138"/>
         </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="64" height="52"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Keg-57-Uh0"/>
+        <segue reference="j3g-0V-q6b"/>
+    </inferredMetricsTieBreakers>
 </document>

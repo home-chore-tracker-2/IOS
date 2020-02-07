@@ -10,7 +10,18 @@ import UIKit
 
 class AddFamilyMemberViewController: UIViewController {
 
-    var choreTrackerController: ChoreTrackerController?
+    var childID: Int? {
+        didSet {
+            
+        }
+    }
+        
+    
+    var choreTrackerController: ChoreTrackerController? {
+        didSet {
+            
+        }
+    }
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -25,10 +36,10 @@ class AddFamilyMemberViewController: UIViewController {
     
     @IBAction func saveChildButtonTapped(_ sender: Any) {
         guard let choreTrackerController = choreTrackerController else { return }
-        if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty {
+        if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let childID = childID {
             let child = ChildUser(username: username, password: password)
             
-            choreTrackerController.childSignUp(childUser: child) { error in
+            choreTrackerController.childSignUp(child: child) { error in
                 if let error = error {
                     NSLog("Error occured while adding child: \(error)")
                 } else {
@@ -37,7 +48,7 @@ class AddFamilyMemberViewController: UIViewController {
                         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
-                        
+                        Child(id: Int64(childID), points: 0, cleanStreak: false, username: username, password: password, chores: [])
                     }
                 }
             }

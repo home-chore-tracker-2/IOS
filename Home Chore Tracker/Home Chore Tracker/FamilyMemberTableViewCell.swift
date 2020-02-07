@@ -10,7 +10,7 @@ import UIKit
 
 class FamilyMemberTableViewCell: UITableViewCell {
 
-    var user: Parent? {
+    var parent: Parent? {
         didSet {
             updateViews()
         }
