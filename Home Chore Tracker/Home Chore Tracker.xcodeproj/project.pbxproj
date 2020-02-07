@@ -14,11 +14,18 @@
 		4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630BE23E9F07B00F33242 /* Bearer.swift */; };
 		4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C123EA08F300F33242 /* Child+Convenience.swift */; };
 		4C2630C423EA0A9E00F33242 /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */; };
+		4C376FAC23ECBC8A006646B8 /* ChildChoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */; };
+		4C3D144823ED423C00CFBDCF /* ChildChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */; };
+		4C40291523EBDE2F00F0D95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291423EBDE2F00F0D95B /* User.swift */; };
+		4C40291723EBF43700F0D95B /* ChildUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291623EBF43700F0D95B /* ChildUser.swift */; };
+		4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */; };
 		4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */; };
+		4C7E3BE723EBB2180017A0A9 /* FamilyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE623EBB2180017A0A9 /* FamilyHomeViewController.swift */; };
+		4C977F0623EC1D71006B931A /* FamilyMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */; };
+		4CD45FEB23ED5D5E004FB599 /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD45FEA23ED5D5E004FB599 /* UserID.swift */; };
 		4CFCDE7223EA7ADA006222B8 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */; };
 		A2002F8023E780A00066B3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F7F23E780A00066B3BB /* AppDelegate.swift */; };
 		A2002F8223E780A00066B3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F8123E780A00066B3BB /* SceneDelegate.swift */; };
-		A2002F8423E780A00066B3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F8323E780A00066B3BB /* ViewController.swift */; };
 		A2002F8723E780A00066B3BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8523E780A00066B3BB /* Main.storyboard */; };
 		A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8823E780A10066B3BB /* Assets.xcassets */; };
 		A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */; };
@@ -53,12 +60,19 @@
 		4C2630BE23E9F07B00F33242 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		4C2630C123EA08F300F33242 /* Child+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+Convenience.swift"; sourceTree = "<group>"; };
 		4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
+		4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoresViewController.swift; sourceTree = "<group>"; };
+		4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoreTableViewCell.swift; sourceTree = "<group>"; };
+		4C40291423EBDE2F00F0D95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4C40291623EBF43700F0D95B /* ChildUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildUser.swift; sourceTree = "<group>"; };
+		4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildsChores.storyboard; sourceTree = "<group>"; };
 		4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberViewController.swift; sourceTree = "<group>"; };
+		4C7E3BE623EBB2180017A0A9 /* FamilyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyHomeViewController.swift; sourceTree = "<group>"; };
+		4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberTableViewCell.swift; sourceTree = "<group>"; };
+		4CD45FEA23ED5D5E004FB599 /* UserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
 		4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
 		A2002F7C23E780A00066B3BB /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2002F7F23E780A00066B3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2002F8123E780A00066B3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2002F8323E780A00066B3BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A2002F8623E780A00066B3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2002F8823E780A10066B3BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2002F8B23E780A10066B3BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,9 +123,20 @@
 			children = (
 				4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */,
 				4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */,
+				4C7E3BE623EBB2180017A0A9 /* FamilyHomeViewController.swift */,
+				4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */,
 				A24F411323ECC7AC003C0064 /* MarkChoreCompleteViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4C977F0423EC1D48006B931A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */,
+				4C3D144723ED423C00CFBDCF /* ChildChoreTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		A2002F7323E780A00066B3BB = {
@@ -135,6 +160,7 @@
 		A2002F7E23E780A00066B3BB /* Home Chore Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4C977F0423EC1D48006B931A /* Views */,
 				4C2630C023EA01DA00F33242 /* View Controllers */,
 				4C2630BB23E9E56F00F33242 /* Model Controller */,
 				A2002F7F23E780A00066B3BB /* AppDelegate.swift */,
@@ -155,6 +181,7 @@
 				A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */,
 				A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */,
 				A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */,
+				4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */,
 				A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */,
 				A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
@@ -184,6 +211,9 @@
 				4C0E5A5423E91FB80068C2A1 /* Parent+Convenience.swift */,
 				4C2630C123EA08F300F33242 /* Child+Convenience.swift */,
 				4C2630C323EA0A9E00F33242 /* Chore+Convenience.swift */,
+				4C40291423EBDE2F00F0D95B /* User.swift */,
+				4C40291623EBF43700F0D95B /* ChildUser.swift */,
+				4CD45FEA23ED5D5E004FB599 /* UserID.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +302,7 @@
 				A24F411223ECC188003C0064 /* MarkChoreComplete.storyboard in Resources */,
 				A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */,
 				A24F410F23ECAA86003C0064 /* ChoreDetail.storyboard in Resources */,
+				4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
 				A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */,
 				A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */,
@@ -295,12 +326,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3D144823ED423C00CFBDCF /* ChildChoreTableViewCell.swift in Sources */,
+				4CD45FEB23ED5D5E004FB599 /* UserID.swift in Sources */,
 				4C2630BF23E9F07B00F33242 /* Bearer.swift in Sources */,
 				4C0E5A3723E912BF0068C2A1 /* CoreDataStack.swift in Sources */,
 				4C2630BD23E9E58900F33242 /* ModelController.swift in Sources */,
+				4C977F0623EC1D71006B931A /* FamilyMemberTableViewCell.swift in Sources */,
 				A2002F8423E780A00066B3BB /* ViewController.swift in Sources */,
 				A24F411423ECC7AC003C0064 /* MarkChoreCompleteViewController.swift in Sources */,
 				4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */,
+				4C40291723EBF43700F0D95B /* ChildUser.swift in Sources */,
+				4C40291523EBDE2F00F0D95B /* User.swift in Sources */,
+				4C7E3BE723EBB2180017A0A9 /* FamilyHomeViewController.swift in Sources */,
+				4C376FAC23ECBC8A006646B8 /* ChildChoresViewController.swift in Sources */,
 				A2E8E8C123E8C5BE0095A345 /* ChildRepresentation.swift in Sources */,
 				4C0E5A5523E91FB80068C2A1 /* Parent+Convenience.swift in Sources */,
 				4C2630C223EA08F300F33242 /* Child+Convenience.swift in Sources */,
@@ -471,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,7 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

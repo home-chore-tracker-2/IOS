@@ -13,7 +13,6 @@ extension Parent {
     var parentRepresentation: ParentRepresentation? {
         guard
             let username = username,
-            let password = password,
             let email = email,
             let children = children
             else { return nil }
@@ -24,19 +23,17 @@ extension Parent {
                 childrenArray.append(childRep)
             }
         }
-        return ParentRepresentation(id: Int(id), username: username, password: password, email: email, children: childrenArray)
+        return ParentRepresentation(id: Int(id), username: username, email: email, children: childrenArray)
     }
     
     @discardableResult convenience init(id: Int64,
                                         username: String,
-                                        password: String,
                                         email: String,
-                                        children: NSSet,
+                                        children: NSSet?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
         self.username = username
-        self.password = password
         self.email = email
         self.children = children
     }
@@ -44,15 +41,28 @@ extension Parent {
     @discardableResult convenience init?(parentRepresentation: ParentRepresentation,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard
-            let id = parentRepresentation.id
-            else { return nil }
+        var children: [Child] = []
+        
+        if let childrenRep = parentRepresentation.children, childrenRep.count > 0 {
+            for childRep in childrenRep {
+                if let child = Child(childRepresentation: childRep, context: context) {
+                    children.append(child)
+                }
+            }
+        }
+        
+        var childrenSet: NSSet?
+        
+        if children.count > 0 {
+            childrenSet = NSSet(array: children)
+        }
+        
+        guard let id = parentRepresentation.id else { return nil }
         
         self.init(id: Int64(id),
                   username: parentRepresentation.username,
-                  password: parentRepresentation.password,
                   email: parentRepresentation.email,
-                  children: NSSet(object: parentRepresentation.children),
+                  children: childrenSet,
                   context: context)
     }
 }
