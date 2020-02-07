@@ -12,6 +12,7 @@ import CoreData
 class ChildChoresViewController: UIViewController, UITableViewDataSource {
     
     let choreTrackerController = ChoreTrackerController()
+    var selectedChore: ChoreRepresentation?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Chore> = {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
@@ -47,6 +48,7 @@ class ChildChoresViewController: UIViewController, UITableViewDataSource {
         guard let cell = childChoresTableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath) as? ChildChoreTableViewCell else { return UITableViewCell()}
         
         let chore = fetchedResultsController.object(at: indexPath)
+        selectedChore = ChoreRepresentation(id: Int(chore.id), points: Int(chore.points), bonusPoints: Int(chore.bonusPoints), choreName: chore.choreName ?? "New Chore", description: chore.choreDescription ?? "", dueDate: chore.dueDate ?? Date(), picture: nil, completed: chore.completed)
         cell.chore = chore
         cell.choreNameLabel.text = chore.choreName
         return cell
@@ -57,15 +59,18 @@ class ChildChoresViewController: UIViewController, UITableViewDataSource {
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ChoreDetailModalSegue" {
+            guard let destinationVC = segue.destination as? MarkChoreCompleteViewController else { return }
+            destinationVC.assignedChore = self.selectedChore
+            destinationVC.choreTrackerController = self.choreTrackerController
+        }
     }
-    */
+    
 
 }
 

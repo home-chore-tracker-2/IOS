@@ -12,6 +12,6 @@ struct ChoreRepresentation: Codable {
     var id, points, bonusPoints: Int
     var choreName, description: String
     var dueDate: Date
-    var picture: URL
+    var picture: Data?
     var completed: Bool
 }
