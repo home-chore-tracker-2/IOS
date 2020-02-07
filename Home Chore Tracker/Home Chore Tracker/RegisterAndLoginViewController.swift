@@ -55,6 +55,7 @@ class RegisterAndLoginViewController: UIViewController {
     }
     
     @IBAction func signUpOrInButtonTapped(_ sender: UIButton) {
+//        guard let id = choreTrackerController?.childID else { return }
         guard let choreTrackerController = choreTrackerController else { return }
         if let username = usernameTextField.text, let password = passwordTextField.text, let email = emailTextField.text {
             let user = User(username: username, password: password, email: email)
@@ -99,6 +100,8 @@ class RegisterAndLoginViewController: UIViewController {
                         NSLog("Error occured during child sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
+//                            Child(id: Int64(id), points: 0, cleanStreak: false, username: username, chores: [])
+                            choreTrackerController.saveToPersistentStore()
                             self.navigationController?.popViewController(animated: true)
 //                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
                         }

@@ -11,7 +11,11 @@ import CoreData
 
 class ChildChoresViewController: UIViewController, UITableViewDataSource {
     
-    let choreTrackerController = ChoreTrackerController()
+    var choreTrackerController: ChoreTrackerController? {
+        didSet {
+            
+        }
+    }
     var selectedChore: ChoreRepresentation?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Chore> = {
@@ -26,9 +30,17 @@ class ChildChoresViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var childChoresTableView: UITableView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        choreTrackerController?.fetchChores()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         childChoresTableView.dataSource = self
+        choreTrackerController?.fetchChores()
+//        Chore(id: 1, points: 10, bonusPoints: 0, choreName: "Clean Room", description: "Pick up dirty clothes, make the bed, and take out the trash.", dueDate: Date(), picture: URL(string: ""), completed: false)
+//        choreTrackerController?.saveToPersistentStore()
     }
     
     

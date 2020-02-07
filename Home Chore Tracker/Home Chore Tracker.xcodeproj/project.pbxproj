@@ -22,6 +22,7 @@
 		4C7E3BE323EB30150017A0A9 /* AddFamilyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */; };
 		4C7E3BE723EBB2180017A0A9 /* FamilyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E3BE623EBB2180017A0A9 /* FamilyHomeViewController.swift */; };
 		4C977F0623EC1D71006B931A /* FamilyMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */; };
+		4CAB11CD23EE0DBD000FCC53 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAB11CC23EE0DBD000FCC53 /* Find.storyboard */; };
 		4CD45FEB23ED5D5E004FB599 /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD45FEA23ED5D5E004FB599 /* UserID.swift */; };
 		4CFCDE7223EA7ADA006222B8 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */; };
 		A2002F8023E780A00066B3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2002F7F23E780A00066B3BB /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		4C7E3BE223EB30150017A0A9 /* AddFamilyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberViewController.swift; sourceTree = "<group>"; };
 		4C7E3BE623EBB2180017A0A9 /* FamilyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyHomeViewController.swift; sourceTree = "<group>"; };
 		4C977F0523EC1D71006B931A /* FamilyMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberTableViewCell.swift; sourceTree = "<group>"; };
+		4CAB11CC23EE0DBD000FCC53 /* Find.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
 		4CD45FEA23ED5D5E004FB599 /* UserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
 		4CFCDE7123EA7ADA006222B8 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
 		A2002F7C23E780A00066B3BB /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				A2002F7F23E780A00066B3BB /* AppDelegate.swift */,
-				A2002F8123E780A00066B3BB /* SceneDelegate.swift */,
 				A22DB2B223ED72810032C079 /* Helpers */,
 				A2E8E8C423E8CA330095A345 /* Models */,
 				4C2630BB23E9E56F00F33242 /* Model Controller */,
@@ -181,6 +182,7 @@
 		A22DB2B223ED72810032C079 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A2002F8123E780A00066B3BB /* SceneDelegate.swift */,
 				A22DB2B023ED724C0032C079 /* NetworkLoader.swift */,
 				A22DB2B323ED729E0032C079 /* URLSession+NetworkDataLoader.swift */,
 			);
@@ -199,6 +201,7 @@
 				A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
 				A24F411123ECC188003C0064 /* MarkChoreComplete.storyboard */,
+				4CAB11CC23EE0DBD000FCC53 /* Find.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
 				A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */,
+				4CAB11CD23EE0DBD000FCC53 /* Find.storyboard in Resources */,
 				A2002F9823E7EBDD0066B3BB /* ChildDetail.storyboard in Resources */,
 				A2002F9623E7E8AE0066B3BB /* AddFamilyMember.storyboard in Resources */,
 				A2002F8723E780A00066B3BB /* Main.storyboard in Resources */,

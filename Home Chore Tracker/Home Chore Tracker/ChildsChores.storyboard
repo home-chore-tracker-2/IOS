@@ -21,7 +21,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VNh-jy-J68" secondAttribute="height" multiplier="1:1" id="Qdu-Ib-18G"/>
                                 </constraints>
-                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ysJ-b9-lhQ">
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ysJ-b9-lhQ">
                                     <rect key="frame" x="0.0" y="0.0" width="344" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-69.565217391304358" y="125.89285714285714"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--MarkChoreComplete-->
         <scene sceneID="U5Y-Zr-7MS">
             <objects>
-                <viewControllerPlaceholder id="bVU-fK-RTd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MarkChoreComplete" id="bVU-fK-RTd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7u-Kl-PNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="785" y="126"/>

@@ -58,6 +58,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="childNameLabel" destination="Dbp-tB-QKh" id="p1S-Vu-Q4G"/>
+                                            <segue destination="rea-3M-5ch" kind="show" identifier="ChildsChoresSegue" id="rCi-uc-avp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -112,6 +113,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1983" y="148"/>
+        </scene>
+        <!--ChildsChores-->
+        <scene sceneID="28N-56-opr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChildsChores" id="rea-3M-5ch" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Moc-2k-y0q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="neJ-YP-c4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3158" y="-49"/>
         </scene>
         <!--AddFamilyMember-->
         <scene sceneID="Wf5-1d-wrV">
