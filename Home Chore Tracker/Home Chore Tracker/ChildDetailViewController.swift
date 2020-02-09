@@ -1,22 +1,27 @@
 //
-//  ChildChoresViewController.swift
+//  ChildDetailViewController.swift
 //  Home Chore Tracker
 //
-//  Created by Michael on 2/6/20.
+//  Created by Michael on 2/8/20.
 //  Copyright © 2020 HomeChoreTrackeriOSDevs. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ChildChoresViewController: UIViewController {
+class ChildDetailViewController: UIViewController, UITableViewDataSource {
     
     var choreTrackerController: ChoreTrackerController? {
         didSet {
             
         }
     }
-    var selectedChore: ChoreRepresentation?
+    
+    var child: Child? {
+        didSet {
+            
+        }
+    }
     
     lazy var fetchedResultsController: NSFetchedResultsController<Chore> = {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
@@ -28,28 +33,32 @@ class ChildChoresViewController: UIViewController {
         return frc
     }()
     
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    
+    @IBOutlet weak var childNameLabel: UILabel!
+    @IBOutlet weak var choreScoreLabel: UILabel!
+    @IBOutlet weak var cleanStreakLabel: UILabel!
     @IBOutlet weak var childChoresTableView: UITableView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        childChoresTableView.dataSource = self
-//        Chore(id: 1, points: 10, bonusPoints: 0, choreName: "Clean Room", description: "Pick up dirty clothes, make the bed, and take out the trash.", dueDate: Date(), picture: URL(string: ""), completed: false)
-//        choreTrackerController?.saveToPersistentStore()
+        childChoresTableView.dataSource = self
+        updateViews()
     }
     
-    @IBAction func refresh(_ sender: Any) {
-        choreTrackerController?.fetchAllChores() { _ in
-            self.childChoresTableView.refreshControl?.endRefreshing()
-        }
+    @IBAction func addChoreButtonTapped(_ sender: Any) {
     }
     
     
-    // MARK: Table view data source
     
+    // MARK: - Table View Data Source
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
@@ -58,17 +67,23 @@ class ChildChoresViewController: UIViewController {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = childChoresTableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath) as? ChildChoreTableViewCell else { return UITableViewCell()}
-//
-//        let chore = fetchedResultsController.object(at: indexPath)
-//        selectedChore = ChoreRepresentation(id: Int(chore.id), points: Int(chore.points), bonusPoints: Int(chore.bonusPoints), choreName: chore.choreName ?? "New Chore", description: chore.choreDescription ?? "", dueDate: chore.dueDate, picture: nil, completed: chore.completed)
-//        selectedChore = ChoreRepresentation(id: Int(chore.id), points: Int(chore.points), bonusPoints: Int(chore.bonusPoints), choreName: chore.choreName ?? "New Chore", description: chore.choreDescription ?? "", dueDate: DateFormatter().string(from: chore.dueDate ?? Date()), picture: chore.picture, completed: chore.completed)
-//        cell.chore = chore
-//        cell.choreNameLabel.text = chore.choreName
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = childChoresTableView.dequeueReusableCell(withIdentifier: "ChoreDetail", for: indexPath) as? ChildDetailTableViewCell else { return UITableViewCell()}
 
+        let chore = fetchedResultsController.object(at: indexPath)
+        cell.chore = chore
+        cell.choreNameLabel.text = chore.choreName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Chores"
+        default:
+            return ""
+        }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -77,20 +92,32 @@ class ChildChoresViewController: UIViewController {
         }
     }
     
+    func updateViews() {
+        guard let child = child else { return }
+        childNameLabel.text = child.username
+        choreScoreLabel.text = "\(child.points)"
+        
+    }
+    
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ChoreDetailModalSegue" {
-            guard let destinationVC = segue.destination as? MarkChoreCompleteViewController else { return }
-            destinationVC.assignedChore = self.selectedChore
-            destinationVC.choreTrackerController = self.choreTrackerController
+        if segue.identifier == "AddChoreSegue" {
+            guard let addChoreVC = segue.destination as? AddChoreViewController else { return }
+            addChoreVC.choreTrackerController = choreTrackerController
+        } else if segue.identifier == "ChoreDetailSegue" {
+            guard let choreDetailVC = segue.destination as? ChoreDetailViewController, let indexPath = childChoresTableView.indexPathForSelectedRow
+                else { return }
+            choreDetailVC.choreTrackerController = choreTrackerController
+            let chore = fetchedResultsController.object(at: indexPath)
+            choreDetailVC.chore = chore
         }
     }
 }
 
-extension ChildChoresViewController: NSFetchedResultsControllerDelegate {
+extension ChildDetailViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         childChoresTableView.beginUpdates()
         }

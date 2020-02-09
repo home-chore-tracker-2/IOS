@@ -62,6 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lQO-UA-LRi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DUU-J2-nrf"/>
                     <connections>
                         <outlet property="passwordTextField" destination="bne-rG-gyC" id="Khb-UG-IxT"/>
                         <outlet property="usernameTextField" destination="XcB-9z-6hB" id="K4h-hr-d1W"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1e-XS-nrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="144"/>
+            <point key="canvasLocation" x="1073.913043478261" y="143.97321428571428"/>
         </scene>
     </scenes>
 </document>

@@ -22,6 +22,6 @@ class FamilyMemberTableViewCell: UITableViewCell {
     
 
     func updateViews() {
-        
+        childNameLabel.text = child?.username
     }
 }

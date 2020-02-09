@@ -30,6 +30,8 @@ class ChoreTrackerController {
     
     private let baseURL = URL(string: "https://chore-tracker-build.herokuapp.com/api/")!
     
+    private let firebaseURL = URL(string: "https://home-chore-tracker.firebaseio.com/")!
+    
     private var bearer: Bearer?
     
     var newUserID: Int = 12
@@ -44,7 +46,7 @@ class ChoreTrackerController {
     
     var childID: Int = 0
     
-    var choresSet: NSSet?
+//    var choresSet: NSSet?
     
     typealias CompletionHandler = (Error?) -> Void
     
@@ -57,7 +59,7 @@ class ChoreTrackerController {
     }
     
     init() {
-        fetchChores()
+        fetchAllChores()
     }
     
     func parentSignUp(user: User, completion: @escaping (Error?) -> Void) {
@@ -162,7 +164,7 @@ class ChoreTrackerController {
                 return
             }
             guard let data = data else {
-                NSLog("Bad data")
+                NSLog("No data returned from URL Data Task")
                 completion(error)
                 return
             }
@@ -269,68 +271,71 @@ class ChoreTrackerController {
 //        }.resume()
 //    }
     
-    func fetchChores(completion: @escaping CompletionHandler = { _ in }) {
-        guard let bearer = bearer else { return }
-        
-        var chores: [Chore] = []
-        
-        let allChoresURL = baseURL.appendingPathComponent("chores")
-        
-        var request = URLRequest(url: allChoresURL)
-        request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let response = response as? HTTPURLResponse, response.statusCode == 401 {
-                NSLog("Response from fetching chores \(response)")
-                DispatchQueue.main.async {
-                    completion(error)
-                }
-                return
-            }
-            if let error = error {
-                NSLog("Error fetching chores data: \(error)")
-                DispatchQueue.main.async {
-                    completion(error)
-                }
-                return
-            }
-            guard let data = data else {
-                NSLog("No data returned by data task")
-                DispatchQueue.main.async {
-                    completion(error)
-                }
-                return
-            }
-            do {
-                
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                
-                let choresRep = try decoder.decode([ChoreRepresentation].self, from: data)
-                    for choreRep in choresRep {
-                        if let chore = Chore(choreRepresentation: choreRep, context: self.context) {
-                            chores.append(chore)
-                        }
-                    }
-                
-                if chores.count > 0 {
-                    self.choresSet = NSSet(array: chores)
-                }
-                try CoreDataStack.shared.save(context: self.context)
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
-            } catch {
-                NSLog("Error decoding chore objects: \(error)")
-                DispatchQueue.main.async {
-                    completion(error)
-                }
-                return
-            }
-        }.resume()
-    }
+//    func fetchChores(completion: @escaping CompletionHandler = { _ in }) {
+//        guard let bearer = bearer else { return }
+//
+//        var chores: [Chore] = []
+//
+////        let allChoresURL = baseURL.appendingPathComponent("chores")
+//        let allChoresURL = firebaseURL.appendingPathComponent("json")
+//        var request = URLRequest(url: allChoresURL)
+//        request.httpMethod = HTTPMethod.get.rawValue
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+//
+//        URLSession.shared.dataTask(with: allChoresURL) { data, response, error in
+//            if let response = response as? HTTPURLResponse, response.statusCode == 401 {
+//                NSLog("Response from fetching chores \(response)")
+//                DispatchQueue.main.async {
+//                    completion(error)
+//                }
+//                return
+//            }
+//            if let error = error {
+//                NSLog("Error fetching chores data: \(error)")
+//                DispatchQueue.main.async {
+//                    completion(error)
+//                }
+//                return
+//            }
+//            guard let data = data else {
+//                NSLog("No data returned by data task")
+//                DispatchQueue.main.async {
+//                    completion(error)
+//                }
+//                return
+//            }
+//            do {
+//
+//                let decoder = JSONDecoder()
+//                decoder.dateDecodingStrategy = .iso8601
+//                let choresRep = Array(try decoder.decode([String : ChoreRepresentation].self, from: data).values)
+//                for chore in choresRep {
+//                    self.updateChore(chore: Chore(), with: chore)
+//                }
+//                let choresRep = try decoder.decode([ChoreRepresentation].self, from: data)
+//                    for choreRep in choresRep {
+//                        if let chore = Chore(choreRepresentation: choreRep, context: self.context) {
+//                            chores.append(chore)
+//                        }
+//                    }
+//
+//                if chores.count > 0 {
+//                    choresSet = NSSet(array: chores)
+//                }
+//                try CoreDataStack.shared.save(context: self.context)
+//                DispatchQueue.main.async {
+//                    completion(nil)
+//                }
+//            } catch {
+//                NSLog("Error decoding chore objects: \(error)")
+//                DispatchQueue.main.async {
+//                    completion(error)
+//                }
+//                return
+//            }
+//        }.resume()
+//    }
     
     func putChore(with image: UIImage, childRep: inout ChildRepresentation, childID: Int, choreID: Int, completion: @escaping (NetworkError?) -> Void) {
         guard let bearer = bearer else {
@@ -380,18 +385,147 @@ class ChoreTrackerController {
         }
     }
     
-//    func deleteParent(for parent: Parent) {
-//        CoreDataStack.shared.mainContext.delete(parent)
-//        saveToPersistentStore()
-//    }
-//
-//    func deleteChild(for child: Child) {
-//        CoreDataStack.shared.mainContext.delete(child)
-//        saveToPersistentStore()
-//    }
+
+    func fetchAllChores(completion: @escaping CompletionHandler = { _ in }) {
+        let requestURL = firebaseURL.appendingPathExtension("json")
+        
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
+            if let error = error {
+                NSLog("Error fetching tasks: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned by data task")
+                DispatchQueue.main.async {
+                    completion(NSError())
+                }
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let choreRep = Array(try decoder.decode([String : ChoreRepresentation].self, from: data).values)
+                try self.updateChores(with: choreRep)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                NSLog("Error decoding or storing task representations: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }.resume()
+    }
     
-    func deleteObject(for object: NSManagedObject) {
-        CoreDataStack.shared.mainContext.delete(object)
+    func sendChoreToServer(chore: Chore, completion: @escaping CompletionHandler = { _ in }) {
+        
+        let uuid = chore.id ?? UUID()
+        let requestURL = firebaseURL.appendingPathComponent(uuid.uuidString).appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        
+        do {
+            guard var representation = chore.choreRepresentation else {
+                completion(NSError())
+                return
+            }
+            representation.picture = ""
+            representation.id = uuid.uuidString
+            chore.id = uuid
+            try CoreDataStack.shared.save()
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            request.httpBody = try encoder.encode(representation)
+        } catch {
+            NSLog("Error encoding chore \(chore): \(error)")
+            DispatchQueue.main.async {
+                completion(error)
+            }
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { _, _, error in
+            if let error = error {
+                NSLog("Error PUTing task to server: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion(nil)
+            }
+        }.resume()
+    }
+    
+    func deleteChoreFromServer(_ chore: Chore, completion: @escaping CompletionHandler = { _ in }) {
+        guard let uuid = chore.id else {
+            completion(NSError())
+            return
+        }
+        
+        let requestURL = firebaseURL.appendingPathComponent(uuid.uuidString).appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            NSLog("\(response!)")
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }.resume()
+    }
+    
+    
+    func updateChores(with representations: [ChoreRepresentation]) throws {
+        let choresWithID = representations.filter { $0.id != nil }
+        let identifiersToFetch = choresWithID.compactMap { UUID(uuidString: $0.id ?? UUID().uuidString) }
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, choresWithID))
+        var choresToCreate = representationsByID
+        
+        let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiersToFetch)
+        
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.perform {
+            do {
+                let existingChores = try context.fetch(fetchRequest)
+                
+                for chore in existingChores {
+                    guard
+                        let id = chore.id,
+                        let representation = representationsByID[id]
+                        else { continue }
+                    self.updateChore(chore: chore, with: representation)
+                    choresToCreate.removeValue(forKey: id)
+                }
+                
+                for representation in choresToCreate.values {
+                    Chore(choreRepresentation: representation, context: context)
+                }
+            } catch {
+                NSLog("Error fetching chores for UUIDs: \(error)")
+            }
+        }
+        try CoreDataStack.shared.save(context: context)
+    }
+    
+    func deleteChild(child: Child) {
+        CoreDataStack.shared.mainContext.delete(child)
+        saveToPersistentStore()
+    }
+    
+    func deleteChore(chore: Chore) {
+        deleteChoreFromServer(chore)
+        CoreDataStack.shared.mainContext.delete(chore)
         saveToPersistentStore()
     }
     
@@ -421,16 +555,14 @@ class ChoreTrackerController {
         saveToPersistentStore()
     }
     
-    func updateChore(for chore: Chore, with representation: ChoreRepresentation) {
+    func updateChore(chore: Chore, with representation: ChoreRepresentation) {
         
-        
-        chore.id = Int64(representation.id)
         chore.choreName = representation.choreName
         chore.choreDescription = representation.description
         chore.dueDate = representation.dueDate
         chore.points = Int64(representation.points)
         chore.bonusPoints = Int64(representation.bonusPoints ?? 0)
-        chore.picture = representation.picture
+        chore.picture = ""
         chore.completed = representation.completed
         saveToPersistentStore()
     }

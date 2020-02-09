@@ -37,7 +37,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         familyMembersTableView.dataSource = self
         if choreTrackerController.isUserLoggedIn == false {
-            performSegue(withIdentifier: "SignUpOrInModalSegue", sender: self)
+            performSegue(withIdentifier: "SignUpOrInSegue", sender: self)
         }
     }
     
@@ -46,6 +46,9 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    @IBAction func addChoresButtonTapped(_ sender: Any) {
+
+    }
     
     // MARK: - Table view data source
     
@@ -62,7 +65,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
         
         let child = fetchedResultsController.object(at: indexPath)
         cell.child = child
-        cell.childNameLabel.text = child.username
+//        cell.childNameLabel.text = child.username
         return cell
     }
     
@@ -77,23 +80,33 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let object = fetchedResultsController.object(at: indexPath)
-            choreTrackerController.deleteObject(for: object)
+            let child = fetchedResultsController.object(at: indexPath)
+            choreTrackerController.deleteChild(child: child)
         }
     }
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignUpOrInModalSegue" {
+        if segue.identifier == "SignUpOrInSegue" {
             guard let signUpOrInVC = segue.destination as? RegisterAndLoginViewController else { return }
             signUpOrInVC.choreTrackerController = choreTrackerController
         } else if segue.identifier == "AddFamilyMemberSegue" {
             guard let addFamilyMemberVC = segue.destination as? AddFamilyMemberViewController else { return }
             addFamilyMemberVC.choreTrackerController = choreTrackerController
             addFamilyMemberVC.childID = choreTrackerController.childID
-        } else if segue.identifier == "ChildsChoresSegue" {
-            guard let childsChoresVC = segue.destination as? ChildChoresViewController else { return }
-            childsChoresVC.choreTrackerController = choreTrackerController  
+        } else if segue.identifier == "ChildDetailSegue" {
+            guard
+                let childDetailVC = segue.destination as? ChildDetailViewController,
+                let indexPath = familyMembersTableView.indexPathForSelectedRow
+                else { return }
+            let child = fetchedResultsController.object(at: indexPath)
+            childDetailVC.choreTrackerController = choreTrackerController
+            childDetailVC.child = child
+            
+            
+        } else if segue.identifier == "AddChoreSegue" {
+            guard let addChoreVC = segue.destination as? AddChoreViewController else { return }
+            addChoreVC.choreTrackerController = choreTrackerController
         }
     }
 }

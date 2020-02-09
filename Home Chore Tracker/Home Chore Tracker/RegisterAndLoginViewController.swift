@@ -16,7 +16,11 @@ enum LoginType {
 
 class RegisterAndLoginViewController: UIViewController {
 
-    var choreTrackerController: ChoreTrackerController?
+    var choreTrackerController: ChoreTrackerController? {
+        didSet {
+            
+        }
+    }
     
     var loginType = LoginType.register
     
@@ -100,10 +104,7 @@ class RegisterAndLoginViewController: UIViewController {
                         NSLog("Error occured during child sign in: \(error)")
                     } else {
                         DispatchQueue.main.async {
-//                            Child(id: Int64(id), points: 0, cleanStreak: false, username: username, chores: [])
-                            choreTrackerController.saveToPersistentStore()
                             self.navigationController?.popViewController(animated: true)
-//                            self.performSegue(withIdentifier: "ChildsChoresSegue", sender: self)
                         }
                     }
                 }

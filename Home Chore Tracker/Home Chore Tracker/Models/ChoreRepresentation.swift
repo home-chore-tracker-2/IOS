@@ -9,10 +9,13 @@
 import Foundation
 
 struct ChoreRepresentation: Codable {
-    var id, points: Int
+    var id: String?
+    var points: Int
     var bonusPoints: Int?
-    var choreName, description: String
+    var choreName: String
+    var description: String
     var dueDate: Date
-    var picture: URL?
+    var picture: String?
     var completed: Bool
+    
 }

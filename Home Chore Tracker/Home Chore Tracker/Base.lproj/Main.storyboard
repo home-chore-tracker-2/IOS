@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afU-jB-fe2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46p-dM-Px2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -16,7 +16,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lV4-dE-Fhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="-256"/>
+            <point key="canvasLocation" x="3918.8405797101454" y="57.589285714285708"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -41,24 +41,29 @@
                                 </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FamilyMemberCell" id="Slc-HH-ZsL" customClass="FamilyMemberTableViewCell" customModule="Home_Chore_Tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="344" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="344" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Slc-HH-ZsL" id="cut-Ea-6xa">
-                                            <rect key="frame" x="0.0" y="0.0" width="344" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbp-tB-QKh">
-                                                    <rect key="frame" x="20" y="11" width="109" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnS-1B-irc">
+                                                    <rect key="frame" x="20" y="11" width="304" height="24.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hnS-1B-irc" firstAttribute="leading" secondItem="cut-Ea-6xa" secondAttribute="leading" constant="20" id="3v4-U0-GES"/>
+                                                <constraint firstAttribute="trailing" secondItem="hnS-1B-irc" secondAttribute="trailing" constant="20" id="Xwq-Um-oKM"/>
+                                                <constraint firstItem="hnS-1B-irc" firstAttribute="top" secondItem="cut-Ea-6xa" secondAttribute="top" constant="11" id="jHC-Fs-Upb"/>
+                                                <constraint firstAttribute="bottom" secondItem="hnS-1B-irc" secondAttribute="bottom" constant="8.5" id="sUv-p6-xiY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="childNameLabel" destination="Dbp-tB-QKh" id="p1S-Vu-Q4G"/>
-                                            <segue destination="rea-3M-5ch" kind="show" identifier="ChildsChoresSegue" id="rCi-uc-avp"/>
+                                            <outlet property="childNameLabel" destination="hnS-1B-irc" id="ciz-dp-U8k"/>
+                                            <segue destination="rea-3M-5ch" kind="show" identifier="ChildDetailSegue" id="rCi-uc-avp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,7 +79,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oMm-fp-5k4" kind="presentation" identifier="AddFamilyMemberSegue" modalPresentationStyle="fullScreen" id="eir-PE-YgD"/>
+                                    <segue destination="oMm-fp-5k4" kind="show" identifier="AddFamilyMemberSegue" id="eir-PE-YgD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-Ne-iVF">
@@ -84,9 +89,13 @@
                                     <constraint firstAttribute="height" constant="40" id="gGv-SQ-V3j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Randomly Assign Chores">
+                                <state key="normal" title="Add Chores">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addChoresButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSW-r9-fAv"/>
+                                    <segue destination="0Gs-Jt-8sp" kind="show" identifier="AddChoreSegue" id="07D-0i-LaV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -107,49 +116,60 @@
                     <navigationItem key="navigationItem" title="Home" id="sPR-wN-SGI"/>
                     <connections>
                         <outlet property="familyMembersTableView" destination="yj8-2Z-TWj" id="Axn-rS-eGq"/>
-                        <segue destination="aAF-8l-yYS" kind="show" identifier="SignUpOrInModalSegue" id="Qsd-aS-5hG"/>
+                        <segue destination="aAF-8l-yYS" kind="show" identifier="SignUpOrInSegue" id="Qsd-aS-5hG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="148"/>
+            <point key="canvasLocation" x="2892.753623188406" y="144.64285714285714"/>
         </scene>
-        <!--ChildsChores-->
+        <!--ChildDetail-->
         <scene sceneID="28N-56-opr">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChildsChores" id="rea-3M-5ch" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ChildDetail" id="rea-3M-5ch" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Moc-2k-y0q"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neJ-YP-c4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3158" y="-49"/>
+            <point key="canvasLocation" x="4048" y="-47"/>
         </scene>
         <!--AddFamilyMember-->
         <scene sceneID="Wf5-1d-wrV">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddFamilyMember" id="oMm-fp-5k4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddFamilyMember" id="oMm-fp-5k4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QRc-VS-xFM"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZh-cf-8xg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757" y="138"/>
+            <point key="canvasLocation" x="3665.9420289855075" y="137.94642857142856"/>
+        </scene>
+        <!--AddAChore-->
+        <scene sceneID="Z0M-ft-9X4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddAChore" id="0Gs-Jt-8sp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1o2-9W-qhF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Cr-YF-TNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3641.3043478260875" y="262.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="z5n-MX-OoG">
+        <scene sceneID="wle-nY-WOX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afU-jB-fe2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46p-dM-Px2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="x4E-1l-BF3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="156-NL-aHq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Kth-st-7X1"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eLD-NA-zVw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EZC-9g-mjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sni-Bl-xZw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="138"/>
+            <point key="canvasLocation" x="1982.608695652174" y="144.64285714285714"/>
         </scene>
     </scenes>
 </document>

@@ -48,12 +48,13 @@ class AddFamilyMemberViewController: UIViewController {
                         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
-                        Child(id: Int64(childID), points: 0, cleanStreak: false, username: username, chores: [])
+//                        Child(id: Int64(childID), points: 0, cleanStreak: false, username: username, chores: [])
                     }
                 }
             }
         }
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     /*
