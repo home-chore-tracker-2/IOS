@@ -46,6 +46,12 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var childChoresTableView: UITableView!
     
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateViews()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         childChoresTableView.dataSource = self
@@ -72,6 +78,11 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
 
         let chore = fetchedResultsController.object(at: indexPath)
         cell.chore = chore
+        if cell.chore?.completed == false {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
+        }
         cell.choreNameLabel.text = chore.choreName
         return cell
     }
@@ -93,10 +104,24 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateViews() {
-        guard let child = child else { return }
+        guard
+            let child = child,
+            let allChores = fetchedResultsController.fetchedObjects
+            else { return }
         childNameLabel.text = child.username
-        choreScoreLabel.text = "\(child.points)"
         
+//        let chore = fetchedResultsController.object(at: indexPath)
+        var totalPoints: Int64 = 0
+        for chore in allChores {
+            if chore.completed {
+                totalPoints += chore.points + chore.bonusPoints
+                    print(child.points)
+                }
+        }
+        
+        child.points = totalPoints
+        
+        choreScoreLabel.text = "\(child.points)"
     }
     
     
@@ -113,6 +138,7 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
             choreDetailVC.choreTrackerController = choreTrackerController
             let chore = fetchedResultsController.object(at: indexPath)
             choreDetailVC.chore = chore
+            choreDetailVC.child = child
         }
     }
 }

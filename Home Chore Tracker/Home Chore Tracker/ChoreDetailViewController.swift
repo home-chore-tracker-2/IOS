@@ -16,6 +16,12 @@ class ChoreDetailViewController: UIViewController {
         }
     }
     
+    var child: Child? {
+        didSet {
+            
+        }
+    }
+    
     var chore: Chore? {
         didSet {
             
@@ -42,7 +48,12 @@ class ChoreDetailViewController: UIViewController {
     }
     
     @IBAction func markCompleteTapped(_ sender: Any) {
-        chore?.completed.toggle()
+        guard let unwrappedChore = chore else { return }
+        
+        unwrappedChore.completed = true
+        choreTrackerController?.sendChoreToServer(chore: unwrappedChore)
+        choreTrackerController?.saveToPersistentStore()
+        navigationController?.popViewController(animated: true)
     }
     
     func updateViews() {

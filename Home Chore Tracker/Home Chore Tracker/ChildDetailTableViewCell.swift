@@ -29,7 +29,10 @@ class ChildDetailTableViewCell: UITableViewCell {
     }
     
     func updateViews() {
-//        guard let chore = chore else { return }
-//        choreNameLabel.text = chore.choreName
+        guard let unwrappedChore = chore else { return }
+        if unwrappedChore.completed {
+            
+        }
+        
     }
 }

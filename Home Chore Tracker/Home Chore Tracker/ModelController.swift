@@ -554,6 +554,7 @@ class ChoreTrackerController {
         child.chores = NSSet(object: chores)
         saveToPersistentStore()
     }
+    /// Updating a chore from a chore representation
     
     func updateChore(chore: Chore, with representation: ChoreRepresentation) {
         
@@ -564,6 +565,12 @@ class ChoreTrackerController {
         chore.bonusPoints = Int64(representation.bonusPoints ?? 0)
         chore.picture = ""
         chore.completed = representation.completed
+        saveToPersistentStore()
+    }
+    
+    func choreCompleted(chore: Chore, choreIsComplete: Bool) {
+        chore.completed = choreIsComplete
+        sendChoreToServer(chore: chore)
         saveToPersistentStore()
     }
 }

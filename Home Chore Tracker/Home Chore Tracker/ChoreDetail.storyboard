@@ -61,7 +61,6 @@
                                 </state>
                                 <connections>
                                     <action selector="markCompleteTapped:" destination="S6H-A8-JPz" eventType="touchUpInside" id="A43-Rx-Nyq"/>
-                                    <segue destination="vcT-YH-zpd" kind="presentation" id="qiR-A8-QZK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,14 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDp-cE-0HJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="174" y="149"/>
-        </scene>
-        <!--MarkChoreComplete-->
-        <scene sceneID="bfB-sq-yGu">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MarkChoreComplete" id="vcT-YH-zpd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zlq-xr-LBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="149"/>
         </scene>
     </scenes>
 </document>
