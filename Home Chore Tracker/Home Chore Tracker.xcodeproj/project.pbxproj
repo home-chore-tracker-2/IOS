@@ -17,7 +17,6 @@
 		4C376FAC23ECBC8A006646B8 /* ChildChoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */; };
 		4C40291523EBDE2F00F0D95B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291423EBDE2F00F0D95B /* User.swift */; };
 		4C40291723EBF43700F0D95B /* ChildUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40291623EBF43700F0D95B /* ChildUser.swift */; };
-		4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */; };
 		4C72753B23EF8973000BAA80 /* AddAChore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C72753A23EF8973000BAA80 /* AddAChore.storyboard */; };
 		4C72753D23EF8EDE000BAA80 /* AddChoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72753C23EF8EDE000BAA80 /* AddChoreViewController.swift */; };
 		4C72753F23EFBE7C000BAA80 /* ChildDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72753E23EFBE7C000BAA80 /* ChildDetailViewController.swift */; };
@@ -70,7 +69,6 @@
 		4C376FAB23ECBC8A006646B8 /* ChildChoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoresViewController.swift; sourceTree = "<group>"; };
 		4C40291423EBDE2F00F0D95B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4C40291623EBF43700F0D95B /* ChildUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildUser.swift; sourceTree = "<group>"; };
-		4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildsChores.storyboard; sourceTree = "<group>"; };
 		4C72753A23EF8973000BAA80 /* AddAChore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAChore.storyboard; sourceTree = "<group>"; };
 		4C72753C23EF8EDE000BAA80 /* AddChoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreViewController.swift; sourceTree = "<group>"; };
 		4C72753E23EFBE7C000BAA80 /* ChildDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				A2002F9723E7EBDD0066B3BB /* ChildDetail.storyboard */,
 				A2002F9923E7EFDA0066B3BB /* AssignChore.storyboard */,
 				A2002F9523E7E8AE0066B3BB /* AddFamilyMember.storyboard */,
-				4C720CC223ECB59E00ED93DC /* ChildsChores.storyboard */,
 				A2002F9323E7E7600066B3BB /* SignUp:LogIn.storyboard */,
 				A24F410E23ECAA86003C0064 /* ChoreDetail.storyboard */,
 				A2002F8A23E780A10066B3BB /* LaunchScreen.storyboard */,
@@ -330,7 +327,6 @@
 				A24F411223ECC188003C0064 /* MarkChoreComplete.storyboard in Resources */,
 				A2002F8C23E780A10066B3BB /* LaunchScreen.storyboard in Resources */,
 				A24F410F23ECAA86003C0064 /* ChoreDetail.storyboard in Resources */,
-				4C720CC323ECB59E00ED93DC /* ChildsChores.storyboard in Resources */,
 				A2002F8923E780A10066B3BB /* Assets.xcassets in Resources */,
 				A2002F9A23E7EFDA0066B3BB /* AssignChore.storyboard in Resources */,
 				4C72753B23EF8973000BAA80 /* AddAChore.storyboard in Resources */,

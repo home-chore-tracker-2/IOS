@@ -24,6 +24,8 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     }()
     
     @IBOutlet weak var familyMembersTableView: UITableView!
+    @IBOutlet weak var addChildButton: UIButton!
+    @IBOutlet weak var addChoresButton: UIButton!
     
     
     
@@ -35,6 +37,7 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         familyMembersTableView.dataSource = self
         if choreTrackerController.isUserLoggedIn == false {
             performSegue(withIdentifier: "SignUpOrInSegue", sender: self)
@@ -43,6 +46,14 @@ class FamilyHomeViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+    }
+    
+    func setup() {
+        addChildButton.layer.cornerRadius = 10
+        addChoresButton.layer.cornerRadius = 10
+        
+        
         
     }
     

@@ -31,7 +31,7 @@ class AddChoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
         // Do any additional setup after loading the view.
     }
     @IBAction func saveChoreTapped(_ sender: Any) {
@@ -52,6 +52,18 @@ class AddChoreViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func setup() {
+        choreNameTextField.layer.cornerRadius = 8
+        choreNameTextField.layer.borderWidth = 2.0
+        pointsTextField.layer.cornerRadius = 8
+        pointsTextField.layer.borderWidth = 2.0
+        bonusPointsTextField.layer.cornerRadius = 8
+        bonusPointsTextField.layer.borderWidth = 2.0
+        descriptionTextView.layer.cornerRadius = 8
+        descriptionTextView.layer.borderWidth = 2.0
+        choreDatePicker.layer.cornerRadius = 8
+        choreDatePicker.layer.borderWidth = 2.0
+    }
 
     /*
     // MARK: - Navigation

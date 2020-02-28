@@ -33,7 +33,7 @@ class RegisterAndLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
         // Do any additional setup after loading the view.
     }
     
@@ -56,6 +56,19 @@ class RegisterAndLoginViewController: UIViewController {
             registerOrLoginLabel.text = "Child Sign In"
             emailTextField.isHidden = true
         }
+    }
+    
+    func setup() {
+        signUpOrInButton.layer.cornerRadius = 10
+        passwordTextField.layer.cornerRadius = 8
+        passwordTextField.layer.borderWidth = 2.0
+        usernameTextField.layer.cornerRadius = 8
+        usernameTextField.layer.borderWidth = 2.0
+        emailTextField.layer.cornerRadius = 8
+        emailTextField.layer.borderWidth = 2.0
+        registerOrLoginSegmentedControl.layer.cornerRadius = 8
+        registerOrLoginSegmentedControl.layer.borderWidth = 2.0
+        
     }
     
     @IBAction func signUpOrInButtonTapped(_ sender: UIButton) {

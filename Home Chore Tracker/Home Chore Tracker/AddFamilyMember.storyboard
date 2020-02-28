@@ -16,22 +16,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcB-9z-6hB">
-                                <rect key="frame" x="20" y="171" width="374" height="34"/>
+                                <rect key="frame" x="20" y="170.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bne-rG-gyC">
-                                <rect key="frame" x="20" y="221" width="374" height="34"/>
+                                <rect key="frame" x="20" y="220.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfd-3U-rJQ">
-                                <rect key="frame" x="35" y="280" width="344" height="40"/>
+                                <rect key="frame" x="35" y="279.5" width="344" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ouU-f9-GrM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -40,13 +40,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Child" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiA-Ld-hZK">
-                                <rect key="frame" x="121" y="109" width="172.5" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <rect key="frame" x="116.5" y="109" width="181.5" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.45382398369999999" green="0.72979432339999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lQO-UA-LRi" firstAttribute="trailing" secondItem="XcB-9z-6hB" secondAttribute="trailing" constant="20" id="0o0-Xr-fzD"/>
                             <constraint firstItem="XcB-9z-6hB" firstAttribute="top" secondItem="qiA-Ld-hZK" secondAttribute="bottom" constant="16" id="2HE-GU-KmI"/>
@@ -65,6 +65,7 @@
                     <navigationItem key="navigationItem" id="DUU-J2-nrf"/>
                     <connections>
                         <outlet property="passwordTextField" destination="bne-rG-gyC" id="Khb-UG-IxT"/>
+                        <outlet property="saveButton" destination="Xfd-3U-rJQ" id="qsE-Oc-sLx"/>
                         <outlet property="usernameTextField" destination="XcB-9z-6hB" id="K4h-hr-d1W"/>
                     </connections>
                 </viewController>

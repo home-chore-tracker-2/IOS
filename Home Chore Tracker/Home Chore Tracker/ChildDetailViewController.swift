@@ -22,6 +22,7 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
             
         }
     }
+    @IBOutlet weak var addChoreButton: UIButton!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Chore> = {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
@@ -83,6 +84,8 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
         } else {
             cell.accessoryType = .checkmark
         }
+        
+        cell.accessoryView?.backgroundColor = .white
         cell.choreNameLabel.text = chore.choreName
         return cell
     }
@@ -118,10 +121,9 @@ class ChildDetailViewController: UIViewController, UITableViewDataSource {
                     print(child.points)
                 }
         }
-        
         child.points = totalPoints
-        
         choreScoreLabel.text = "\(child.points)"
+        addChoreButton.layer.cornerRadius = 10
     }
     
     

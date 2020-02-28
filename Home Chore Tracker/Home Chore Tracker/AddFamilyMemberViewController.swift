@@ -25,18 +25,19 @@ class AddFamilyMemberViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func saveChildButtonTapped(_ sender: Any) {
         guard let choreTrackerController = choreTrackerController else { return }
-        if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty, let childID = childID {
+        if let username = usernameTextField.text, !username.isEmpty, let password = passwordTextField.text, !password.isEmpty {
             let child = ChildUser(username: username, password: password)
             
             choreTrackerController.childSignUp(child: child) { error in
@@ -48,7 +49,7 @@ class AddFamilyMemberViewController: UIViewController {
                         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
-//                        Child(id: Int64(childID), points: 0, cleanStreak: false, username: username, chores: [])
+
                     }
                 }
             }
@@ -57,6 +58,14 @@ class AddFamilyMemberViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
+    func setup() {
+        usernameTextField.layer.cornerRadius = 8
+        usernameTextField.layer.borderWidth = 2.0
+        passwordTextField.layer.cornerRadius = 8
+        passwordTextField.layer.borderWidth = 2.0
+        saveButton.layer.cornerRadius = 10
+    }
     /*
     // MARK: - Navigation
 
