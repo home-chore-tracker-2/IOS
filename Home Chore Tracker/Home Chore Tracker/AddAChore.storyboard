@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QER-md-mYP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Chore View Controller-->
+        <scene sceneID="tNo-Ks-crt">
+            <objects>
+                <viewController id="QER-md-mYP" customClass="AddChoreViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tW9-aA-XNK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Optional:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-Dq-pjY">
+                                <rect key="frame" x="20" y="318.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter A Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sM-ZX-cCv">
+                                <rect key="frame" x="20" y="137.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Chores Point Value:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-W4-1bU">
+                                <rect key="frame" x="20" y="222" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mb5-pu-To7">
+                                <rect key="frame" x="20" y="415" width="374" height="108.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chore Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Si-he-Rsq">
+                                <rect key="frame" x="20" y="107" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Z-3f-v0j">
+                                <rect key="frame" x="20" y="191.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonus Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLy-Fl-qk9">
+                                <rect key="frame" x="20" y="276" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chore Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUT-yO-Rk7">
+                                <rect key="frame" x="20" y="372.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Chore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geM-AH-wsZ">
+                                <rect key="frame" x="20" y="41.5" width="374" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chore Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEs-9F-yVQ">
+                                <rect key="frame" x="20" y="543.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-Qy-SAn">
+                                <rect key="frame" x="0.0" y="586" width="414" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45382398369999999" green="0.72979432339999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rE1-Dq-pjY" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="2YL-Yk-Wzt"/>
+                            <constraint firstItem="lUT-yO-Rk7" firstAttribute="top" secondItem="rE1-Dq-pjY" secondAttribute="bottom" constant="20" id="4qK-Tc-7NF"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="mb5-pu-To7" secondAttribute="trailing" constant="20" id="6SN-V5-enB"/>
+                            <constraint firstItem="mb5-pu-To7" firstAttribute="top" secondItem="lUT-yO-Rk7" secondAttribute="bottom" constant="20" id="7FT-qE-Eon"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="rE1-Dq-pjY" secondAttribute="trailing" constant="20" id="D2Z-Wg-M6G"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="0sM-ZX-cCv" secondAttribute="trailing" constant="20" id="DBQ-zR-SbD"/>
+                            <constraint firstItem="0sM-ZX-cCv" firstAttribute="top" secondItem="8Si-he-Rsq" secondAttribute="bottom" constant="8" id="Ey5-KZ-uNP"/>
+                            <constraint firstItem="0sM-ZX-cCv" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="GWh-x3-qdh"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="oEs-9F-yVQ" secondAttribute="trailing" constant="20" id="HmY-pQ-12z"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="trailing" secondItem="k8Z-3f-v0j" secondAttribute="trailing" id="HrB-pd-pFT"/>
+                            <constraint firstItem="oEs-9F-yVQ" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="I1b-H7-mPZ"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="leading" secondItem="geM-AH-wsZ" secondAttribute="leading" id="MyI-2V-GCo"/>
+                            <constraint firstItem="fLy-Fl-qk9" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="S60-ii-0i7"/>
+                            <constraint firstItem="lUT-yO-Rk7" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="WgC-jS-TxS"/>
+                            <constraint firstItem="fLy-Fl-qk9" firstAttribute="top" secondItem="tI1-W4-1bU" secondAttribute="bottom" constant="20" id="Zev-uz-bvj"/>
+                            <constraint firstItem="k8Z-3f-v0j" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="aIC-zO-x9N"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="bottom" secondItem="pLX-Qy-SAn" secondAttribute="bottom" constant="60" id="azQ-Sf-nRT"/>
+                            <constraint firstItem="oEs-9F-yVQ" firstAttribute="top" secondItem="mb5-pu-To7" secondAttribute="bottom" constant="20" id="cxM-k6-Jlq"/>
+                            <constraint firstItem="k8Z-3f-v0j" firstAttribute="top" secondItem="0sM-ZX-cCv" secondAttribute="bottom" constant="20" id="d0y-TM-LAu"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="leading" secondItem="k8Z-3f-v0j" secondAttribute="leading" id="f3U-2y-NYR"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="fLy-Fl-qk9" secondAttribute="trailing" constant="20" id="fMh-Uz-h6Y"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="k8Z-3f-v0j" secondAttribute="trailing" constant="20" id="fdC-Xg-nra"/>
+                            <constraint firstItem="pLX-Qy-SAn" firstAttribute="top" secondItem="oEs-9F-yVQ" secondAttribute="bottom" constant="20" id="fqS-4w-Ic5"/>
+                            <constraint firstItem="8Si-he-Rsq" firstAttribute="top" secondItem="geM-AH-wsZ" secondAttribute="bottom" constant="20" id="g9r-MT-947"/>
+                            <constraint firstItem="rE1-Dq-pjY" firstAttribute="top" secondItem="fLy-Fl-qk9" secondAttribute="bottom" constant="20" id="iGq-Ur-ADR"/>
+                            <constraint firstItem="mb5-pu-To7" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="imV-4f-DG8"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="lUT-yO-Rk7" secondAttribute="trailing" constant="20" id="mKH-mv-VKy"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="top" secondItem="tW9-aA-XNK" secondAttribute="top" constant="222" id="o4q-re-PuJ"/>
+                            <constraint firstItem="pLX-Qy-SAn" firstAttribute="trailing" secondItem="qiD-WI-EJY" secondAttribute="trailing" id="pG3-ew-Bvh"/>
+                            <constraint firstItem="pLX-Qy-SAn" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" id="pL3-vi-jkW"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="top" secondItem="k8Z-3f-v0j" secondAttribute="bottom" constant="8" symbolic="YES" id="rPX-n5-fs8"/>
+                            <constraint firstItem="8Si-he-Rsq" firstAttribute="leading" secondItem="qiD-WI-EJY" secondAttribute="leading" constant="20" id="ret-GT-Kxh"/>
+                            <constraint firstItem="tI1-W4-1bU" firstAttribute="trailing" secondItem="geM-AH-wsZ" secondAttribute="trailing" id="uAb-iD-i3r"/>
+                            <constraint firstItem="qiD-WI-EJY" firstAttribute="trailing" secondItem="8Si-he-Rsq" secondAttribute="trailing" constant="20" id="zNr-c1-cFH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qiD-WI-EJY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m9H-ml-LJj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="83S-ec-n45">
+                            <connections>
+                                <action selector="saveChoreTapped:" destination="QER-md-mYP" id="HLG-fy-aef"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bonusPointsTextField" destination="rE1-Dq-pjY" id="hql-Re-955"/>
+                        <outlet property="choreDatePicker" destination="pLX-Qy-SAn" id="QUX-Ln-Sa6"/>
+                        <outlet property="choreNameTextField" destination="0sM-ZX-cCv" id="5Tt-mU-xZ3"/>
+                        <outlet property="descriptionTextView" destination="mb5-pu-To7" id="qbq-WK-o7J"/>
+                        <outlet property="pointsTextField" destination="tI1-W4-1bU" id="qM4-DU-1w8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yn-CZ-QiW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023.1884057971015" y="139.95535714285714"/>
+        </scene>
+    </scenes>
+</document>

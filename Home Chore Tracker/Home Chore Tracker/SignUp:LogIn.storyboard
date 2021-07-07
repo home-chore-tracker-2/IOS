@@ -7,50 +7,62 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Register And Login View Controller-->
         <scene sceneID="7Qm-aO-W5a">
             <objects>
-                <viewController id="E3H-sL-xvQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpOrLogIn" id="E3H-sL-xvQ" customClass="RegisterAndLoginViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iMw-Ny-1Y6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-fH-e7M">
-                                <rect key="frame" x="147" y="44" width="120" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <rect key="frame" x="134" y="44" width="146.5" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bjV-SP-0iA">
-                                <rect key="frame" x="35" y="120" width="344" height="32"/>
+                                <rect key="frame" x="35" y="125.5" width="344" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Sign Up"/>
+                                    <segment title="Log in"/>
+                                    <segment title="Child log in"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="E3H-sL-xvQ" eventType="valueChanged" id="jFA-b7-0pp"/>
+                                </connections>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-Sx-cK4">
-                                <rect key="frame" x="20" y="181" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-Sx-cK4">
+                                <rect key="frame" x="20" y="186.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsz-1w-AhC">
-                                <rect key="frame" x="20" y="245" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsz-1w-AhC">
+                                <rect key="frame" x="20" y="294.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKQ-Do-qOb">
-                                <rect key="frame" x="35" y="319" width="344" height="40"/>
+                                <rect key="frame" x="35" y="368.5" width="344" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jsO-xg-PIt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpOrInButtonTapped:" destination="E3H-sL-xvQ" eventType="touchUpInside" id="WY2-dK-86I"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-nO-uC3">
+                                <rect key="frame" x="20" y="240.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.45382398369999999" green="0.72979432339999994" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dOf-fH-e7M" firstAttribute="top" secondItem="pc2-hB-mfh" secondAttribute="top" id="1cn-Fg-0d6"/>
                             <constraint firstItem="IGO-Sx-cK4" firstAttribute="top" secondItem="bjV-SP-0iA" secondAttribute="bottom" constant="30" id="ClW-Dx-QO7"/>
@@ -59,20 +71,42 @@
                             <constraint firstItem="FKQ-Do-qOb" firstAttribute="top" secondItem="Fsz-1w-AhC" secondAttribute="bottom" constant="40" id="Ion-Rl-cE7"/>
                             <constraint firstItem="FKQ-Do-qOb" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="35" id="OlM-qf-f4i"/>
                             <constraint firstItem="dOf-fH-e7M" firstAttribute="centerX" secondItem="iMw-Ny-1Y6" secondAttribute="centerX" id="Pw4-Yw-gaX"/>
+                            <constraint firstItem="gF1-nO-uC3" firstAttribute="top" secondItem="IGO-Sx-cK4" secondAttribute="bottom" constant="20" id="U4B-UL-8YK"/>
                             <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="Fsz-1w-AhC" secondAttribute="trailing" constant="20" id="UaH-0J-uSu"/>
+                            <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="gF1-nO-uC3" secondAttribute="trailing" constant="20" id="VlE-6B-vnP"/>
                             <constraint firstItem="IGO-Sx-cK4" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="evc-Xb-s4k"/>
                             <constraint firstItem="bjV-SP-0iA" firstAttribute="top" secondItem="dOf-fH-e7M" secondAttribute="bottom" constant="36" id="mGB-jZ-XuH"/>
                             <constraint firstItem="Fsz-1w-AhC" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="mPV-T2-PBY"/>
+                            <constraint firstItem="gF1-nO-uC3" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="20" id="nO3-uw-ds5"/>
                             <constraint firstItem="pc2-hB-mfh" firstAttribute="trailing" secondItem="bjV-SP-0iA" secondAttribute="trailing" constant="35" id="oHm-Mn-CbB"/>
-                            <constraint firstItem="Fsz-1w-AhC" firstAttribute="top" secondItem="IGO-Sx-cK4" secondAttribute="bottom" constant="30" id="qrH-vX-Qhv"/>
                             <constraint firstItem="bjV-SP-0iA" firstAttribute="leading" secondItem="pc2-hB-mfh" secondAttribute="leading" constant="35" id="sCj-Us-pNU"/>
+                            <constraint firstItem="Fsz-1w-AhC" firstAttribute="top" secondItem="gF1-nO-uC3" secondAttribute="bottom" constant="20" id="tlh-WU-fMs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pc2-hB-mfh"/>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="IGO-Sx-cK4" id="kar-AH-7c1"/>
+                        <outlet property="passwordTextField" destination="Fsz-1w-AhC" id="3PJ-7S-595"/>
+                        <outlet property="registerOrLoginLabel" destination="dOf-fH-e7M" id="GMS-fD-AZX"/>
+                        <outlet property="registerOrLoginSegmentedControl" destination="bjV-SP-0iA" id="4z2-1c-f8W"/>
+                        <outlet property="signUpOrInButton" destination="FKQ-Do-qOb" id="Mvt-Dv-fot"/>
+                        <outlet property="usernameTextField" destination="gF1-nO-uC3" id="IkE-Pc-rpn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKe-Y6-SXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="171"/>
+            <point key="canvasLocation" x="168" y="169"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="IvX-S7-g7T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Mz8-xq-EjA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XKg-9i-KAF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fq7-GO-1LL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="169"/>
         </scene>
     </scenes>
 </document>
